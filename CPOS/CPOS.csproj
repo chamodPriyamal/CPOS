@@ -62,6 +62,8 @@
     <Compile Include="Controller\DatabaseController.cs" />
     <Compile Include="Controller\EmployeeController.cs" />
     <Compile Include="Controller\LoginController.cs" />
+    <Compile Include="Controller\PermissionController.cs" />
+    <Compile Include="Controller\Permissions.cs" />
     <Compile Include="Controller\SessionController.cs" />
     <Compile Include="CPOSContext.cs" />
     <Compile Include="Exceptions\InvalidCredentialsException.cs" />

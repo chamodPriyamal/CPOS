@@ -25,5 +25,10 @@ namespace CPOS.Model
         [Required] public bool CanDelete { get; set; } = true;
         [Required] public DateTime CreatedDate { get; set; } = DateTime.Now;
         [Required] public DateTime LastUpdate { get; set; } = DateTime.Now;
+
+        public void Register()
+        {
+
+        }
     }
 }
