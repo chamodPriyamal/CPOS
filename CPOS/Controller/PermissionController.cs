@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace CPOS.Controller
 {
-    class PermissionController
+    public static class PermissionController
     {
+        
     }
 }

@@ -4,9 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CPOS.Controller
+namespace CPOS.Model
 {
-    class Permissions
+    public enum Permission
     {
+        LOGIN,
+        EMPLOYEE_ADD,
+        EMPLOYEE_DELETE,
     }
 }

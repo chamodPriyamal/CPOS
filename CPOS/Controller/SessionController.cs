@@ -10,6 +10,7 @@ namespace CPOS.Controller
     {
         private static Model.Employee emp;
         private static Model.User usr;
+        private static Model.Permission[] Permissions;
 
         public static void StartSession(Model.Employee emp , Model.User usr)
         {

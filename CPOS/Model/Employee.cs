@@ -7,6 +7,7 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using CPOS.Controller;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,11 @@ namespace CPOS.Model
 
         public void Register()
         {
-
+            EmployeeController.Register(this);
+        }
+        public void Remove()
+        {
+            EmployeeController.Remove(this);
         }
     }
 }

@@ -63,45 +63,24 @@
     <Compile Include="Controller\EmployeeController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\PermissionController.cs" />
-    <Compile Include="Controller\Permissions.cs" />
+    <Compile Include="Migrations\202104181648267_New.cs" />
+    <Compile Include="Migrations\202104181648267_New.designer.cs">
+      <DependentUpon>202104181648267_New.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Permission.cs" />
     <Compile Include="Controller\SessionController.cs" />
     <Compile Include="CPOSContext.cs" />
     <Compile Include="Exceptions\InvalidCredentialsException.cs" />
     <Compile Include="Exceptions\UsernameOrPasswordEmptyException.cs" />
     <Compile Include="Exceptions\UsernameNotFoundException.cs" />
     <Compile Include="Helper\MessageHelper.cs" />
-    <Compile Include="Migrations\202104151605191_Add Employee Table.cs" />
-    <Compile Include="Migrations\202104151605191_Add Employee Table.designer.cs">
-      <DependentUpon>202104151605191_Add Employee Table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104151650071_Updated Employee Table.cs" />
-    <Compile Include="Migrations\202104151650071_Updated Employee Table.designer.cs">
-      <DependentUpon>202104151650071_Updated Employee Table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104151720043_Add User Table.cs" />
-    <Compile Include="Migrations\202104151720043_Add User Table.designer.cs">
-      <DependentUpon>202104151720043_Add User Table.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202104151730577_Made username unique.cs" />
-    <Compile Include="Migrations\202104151730577_Made username unique.designer.cs">
-      <DependentUpon>202104151730577_Made username unique.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202104151605191_Add Employee Table.resx">
-      <DependentUpon>202104151605191_Add Employee Table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104151650071_Updated Employee Table.resx">
-      <DependentUpon>202104151650071_Updated Employee Table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104151720043_Add User Table.resx">
-      <DependentUpon>202104151720043_Add User Table.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202104151730577_Made username unique.resx">
-      <DependentUpon>202104151730577_Made username unique.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104181648267_New.resx">
+      <DependentUpon>202104181648267_New.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

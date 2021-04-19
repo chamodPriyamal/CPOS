@@ -1,6 +1,7 @@
 ﻿namespace CPOS.Migrations
 {
     using System;
+    using System.Collections.Generic;
     using System.Data.Entity;
     using System.Data.Entity.Migrations;
     using System.Linq;
@@ -15,6 +16,12 @@
 
         protected override void Seed(CPOS.CPOSContext context)
         {
+            context.Database.Delete();
+            context.Database.Create();
+            List<Permission> Permissions = new List<Permission>();
+            Permissions.Add(Permission.LOGIN);
+            Permissions.Add(Permission.EMPLOYEE_ADD);
+            Permissions.Add(Permission.EMPLOYEE_DELETE);
 
             //Add Default Employee
             Employee emp = new Employee();
@@ -40,6 +47,7 @@
             usr.LastUpdate = DateTime.Now;
             usr.CreatedDate = DateTime.Now;
             usr.Employee = emp;
+            usr.Permissions = Permissions;
             context.Users.AddOrUpdate(usr);
             context.SaveChanges();
         }

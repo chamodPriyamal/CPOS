@@ -26,5 +26,6 @@ namespace CPOS.Model
         [Required] public DateTime CreatedDate { get; set; } = DateTime.Now;
         [Required] public DateTime LastUpdate { get; set; } = DateTime.Now;
         [Required] public virtual Employee Employee { get; set; }
+        [Required] public ICollection<Permission> Permissions { get; set; }
     }
 }

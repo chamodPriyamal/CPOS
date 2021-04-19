@@ -7,13 +7,13 @@ namespace CPOS.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.4.4")]
-    public sealed partial class Madeusernameunique : IMigrationMetadata
+    public sealed partial class New : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(Madeusernameunique));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(New));
         
         string IMigrationMetadata.Id
         {
-            get { return "202104151730577_Made username unique"; }
+            get { return "202104181648267_New"; }
         }
         
         string IMigrationMetadata.Source

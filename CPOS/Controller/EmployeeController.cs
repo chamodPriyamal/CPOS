@@ -18,20 +18,8 @@ namespace CPOS.Controller
     {
         private static CPOSContext context = DatabaseController.GetConnection();
 
-        public static void Register(string name , string address , string mobile , decimal commision_rate ,decimal otrate)
+        public static void Register(Employee emp )
         {
-            Employee emp = new Employee{
-                Name = name,
-                Address = address,
-                CanDelete = true,
-                CommisionRate = commision_rate,
-                CreatedDate = DateTime.Now,
-                IsActive = true,
-                LastUpdate = DateTime.Now,
-                Mobile = mobile,
-                OTRate = otrate
-            };
-
             try
             {
                 if (emp.Name == "")
