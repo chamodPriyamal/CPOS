@@ -14,18 +14,17 @@ namespace CPOS
         [STAThread]
         static void Main()
         {
+            if (Environment.OSVersion.Version.Major >= 6)
+                SetProcessDPIAware();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form());
+            Application.Run(new View.Login());
             CPOSContext c = Controller.DatabaseController.GetConnection();
-            Model.User u = c.Users.FirstOrDefault(x => x.Id == 1);
-            Console.WriteLine(u.Username);
-            
-            foreach (Model.Permission item in u.Permissions)
-            {
-                Console.WriteLine(item.ToString());
-            }
-            Console.WriteLine("Nothing to Show");
+
         }
+
+        [System.Runtime.InteropServices.DllImport("user32.dll")]
+        private static extern bool SetProcessDPIAware();
     }
 }

@@ -21,6 +21,7 @@ namespace CPOS.Controller
                     return false;
                 }
             }
+            return true;
         }
     }
 }
