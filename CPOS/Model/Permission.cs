@@ -1,15 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace CPOS.Model
 {
-    public enum Permission
+    public class Permission
     {
-        LOGIN,
-        EMPLOYEE_ADD,
-        EMPLOYEE_DELETE,
+        [Key]
+        public int Id { get; set; }
+
+        [Required]
+        public int Code { get; set; }
+
+        [Required]
+        public string Name { get; set; }
+
+        [Required] public virtual ICollection<User> Users { get; set; }
     }
 }

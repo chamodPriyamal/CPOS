@@ -17,7 +17,6 @@ namespace CPOS.Model
     public class User
     {
         [Key] public int Id { get; set; }
-
         [Required][StringLength(10)][Index(IsUnique = true)] public string Username { get; set; }
         [Required] public string Password { get; set; }
         [Required] public bool IsActive { get; set; } = true;
@@ -26,6 +25,6 @@ namespace CPOS.Model
         [Required] public DateTime CreatedDate { get; set; } = DateTime.Now;
         [Required] public DateTime LastUpdate { get; set; } = DateTime.Now;
         [Required] public virtual Employee Employee { get; set; }
-        [Required] public ICollection<Permission> Permissions { get; set; }
+        [Required] public virtual ICollection<Permission> Permissions { get; set; }
     }
 }

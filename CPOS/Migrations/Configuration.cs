@@ -19,9 +19,8 @@
             context.Database.Delete();
             context.Database.Create();
             List<Permission> Permissions = new List<Permission>();
-            Permissions.Add(Permission.LOGIN);
-            Permissions.Add(Permission.EMPLOYEE_ADD);
-            Permissions.Add(Permission.EMPLOYEE_DELETE);
+            Permissions.Add(new Permission { Code = 1, Name = "LOGIN" });
+
 
             //Add Default Employee
             Employee emp = new Employee();

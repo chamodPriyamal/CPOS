@@ -63,9 +63,10 @@
     <Compile Include="Controller\EmployeeController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\PermissionController.cs" />
-    <Compile Include="Migrations\202104181648267_New.cs" />
-    <Compile Include="Migrations\202104181648267_New.designer.cs">
-      <DependentUpon>202104181648267_New.cs</DependentUpon>
+    <Compile Include="Exceptions\UserNotActiveException.cs" />
+    <Compile Include="Migrations\202104201649412_New.cs" />
+    <Compile Include="Migrations\202104201649412_New.designer.cs">
+      <DependentUpon>202104201649412_New.cs</DependentUpon>
     </Compile>
     <Compile Include="Model\Permission.cs" />
     <Compile Include="Controller\SessionController.cs" />
@@ -79,8 +80,8 @@
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Migrations\202104181648267_New.resx">
-      <DependentUpon>202104181648267_New.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202104201649412_New.resx">
+      <DependentUpon>202104201649412_New.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

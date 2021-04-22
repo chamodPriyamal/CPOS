@@ -15,11 +15,11 @@ namespace CPOS.Controller
     {
         private static CPOSContext context = DatabaseController.GetConnection();
 
-        public static void Login(string username , string password)
+        public static void Login(string username, string password)
         {
             try
             {
-                if(username == "" || password == "")
+                if (username == "" || password == "")
                 {
                     throw new UsernameOrPasswordEmptyException();
                 }
@@ -32,27 +32,33 @@ namespace CPOS.Controller
                     }
                     else
                     {
-                        if (UserFromDB.Password == password)
+                        if(UserFromDB.IsActive == false)
                         {
-                            UserFromDB.LastLogin = DateTime.Now;
-                            SessionController.StartSession(UserFromDB.Employee, UserFromDB);
-                            context.Users.Add(UserFromDB);
-                            context.SaveChanges();
 
                         }
                         else
                         {
-                            throw new InvalidCredentialsException();
+                            if (UserFromDB.Password == password)
+                            {
+                                UserFromDB.LastLogin = DateTime.Now;
+                                SessionController.StartSession(UserFromDB.Employee, UserFromDB);
+                                context.Users.Add(UserFromDB);
+                                context.SaveChanges();
+
+                            }
+                            else
+                            {
+                                throw new InvalidCredentialsException();
+                            }
                         }
                     }
-                } 
+                }
             }
             catch (Exception ex)
             {
                 Helper.MessageHelper.AlertError(ex.Message);
             }
         }
-
         public static void Logout()
         {
             SessionController.EndSession();

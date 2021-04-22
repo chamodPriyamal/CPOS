@@ -13,7 +13,7 @@ namespace CPOS.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "202104181648267_New"; }
+            get { return "202104201649412_New"; }
         }
         
         string IMigrationMetadata.Source

@@ -8,9 +8,9 @@ namespace CPOS.Controller
 {
     public static class SessionController
     {
-        private static Model.Employee emp;
-        private static Model.User usr;
-        private static Model.Permission[] Permissions;
+        public static Model.Employee emp;
+        public static Model.User usr;
+        public static Model.Permission[] Permissions;
 
         public static void StartSession(Model.Employee emp , Model.User usr)
         {
