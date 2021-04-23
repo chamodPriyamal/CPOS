@@ -42,8 +42,8 @@ namespace CPOS.Controller
                             {
                                 UserFromDB.LastLogin = DateTime.Now;
                                 SessionController.StartSession(UserFromDB.Employee, UserFromDB);
-                                context.Users.Add(UserFromDB);
                                 context.SaveChanges();
+                                Helper.MessageHelper.AlertInfo("Login Success!");
 
                             }
                             else

@@ -17,14 +17,14 @@ namespace CPOS.View
             InitializeComponent();
         }
 
-        private void BtnClose_Click(object sender, EventArgs e)
+        private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void Login_Load(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-          
+            Controller.LoginController.Login(txtUsername.Text, txtPassword.Text);
         }
     }
 }
