@@ -15,12 +15,13 @@ namespace CPOS.Controller
     {
         private static CPOSContext context = DatabaseController.GetConnection();
 
-        public static void Login(string username, string password)
+        public static bool Login(string username, string password)
         {
             try
             {
                 if (username == "" || password == "")
                 {
+                    return true;
                     throw new UsernameOrPasswordEmptyException();
                 }
                 else
@@ -28,13 +29,14 @@ namespace CPOS.Controller
                     var UserFromDB = context.Users.FirstOrDefault(x => x.Username == username);
                     if (UserFromDB == null)
                     {
-                        throw new UsernameNotFoundException();
+                        return true;
+                        throw new UsernameNotFoundException();               
                     }
                     else
                     {
                         if(UserFromDB.IsActive == false)
                         {
-
+                            return false;
                         }
                         else
                         {
@@ -43,11 +45,11 @@ namespace CPOS.Controller
                                 UserFromDB.LastLogin = DateTime.Now;
                                 SessionController.StartSession(UserFromDB.Employee, UserFromDB);
                                 context.SaveChanges();
-                                Helper.MessageHelper.AlertInfo("Login Success!");
-
+                                return true;
                             }
                             else
                             {
+                                return true;
                                 throw new InvalidCredentialsException();
                             }
                         }
@@ -57,6 +59,7 @@ namespace CPOS.Controller
             catch (Exception ex)
             {
                 Helper.MessageHelper.AlertError(ex.Message);
+                return true;
             }
         }
         public static void Logout()

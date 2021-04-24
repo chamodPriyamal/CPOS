@@ -83,6 +83,16 @@ namespace CPOS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap blurred_gradient_green_yellow_background {
+            get {
+                object obj = ResourceManager.GetObject("blurred-gradient-green-yellow-background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap close {
             get {
                 object obj = ResourceManager.GetObject("close", resourceCulture);
@@ -96,6 +106,16 @@ namespace CPOS.Properties {
         internal static System.Drawing.Bitmap profile {
             get {
                 object obj = ResourceManager.GetObject("profile", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap smooth_dark_blue_background {
+            get {
+                object obj = ResourceManager.GetObject("smooth-dark-blue-background", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

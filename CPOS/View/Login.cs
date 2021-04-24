@@ -24,7 +24,27 @@ namespace CPOS.View
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            Controller.LoginController.Login(txtUsername.Text, txtPassword.Text);
+            if(Controller.LoginController.Login(txtUsername.Text, txtPassword.Text))
+            {
+                new Dashboard().Show();
+                this.Hide();
+            }
+        }
+
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                txtPassword.Focus();
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogin.PerformClick();
+            }
         }
     }
 }
