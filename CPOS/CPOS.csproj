@@ -59,24 +59,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\CategoryController.cs" />
+    <Compile Include="Controller\CostCodeController.cs" />
     <Compile Include="Controller\DatabaseController.cs" />
     <Compile Include="Controller\EmployeeController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\PermissionController.cs" />
-    <Compile Include="Exceptions\UserNotActiveException.cs" />
+    <Compile Include="Controller\ProductController.cs" />
+    <Compile Include="Controller\SettingsController.cs" />
     <Compile Include="Migrations\202104201649412_New.cs" />
     <Compile Include="Migrations\202104201649412_New.designer.cs">
       <DependentUpon>202104201649412_New.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104260129265_Add Settings.cs" />
+    <Compile Include="Migrations\202104260129265_Add Settings.designer.cs">
+      <DependentUpon>202104260129265_Add Settings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104260151586_Add Cost Code.cs" />
+    <Compile Include="Migrations\202104260151586_Add Cost Code.designer.cs">
+      <DependentUpon>202104260151586_Add Cost Code.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104260218187_Add Category.cs" />
+    <Compile Include="Migrations\202104260218187_Add Category.designer.cs">
+      <DependentUpon>202104260218187_Add Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Permission.cs" />
     <Compile Include="Controller\SessionController.cs" />
     <Compile Include="CPOSContext.cs" />
-    <Compile Include="Exceptions\InvalidCredentialsException.cs" />
-    <Compile Include="Exceptions\UsernameOrPasswordEmptyException.cs" />
-    <Compile Include="Exceptions\UsernameNotFoundException.cs" />
     <Compile Include="Helper\MessageHelper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\Settings.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -97,8 +111,23 @@
     <Compile Include="View\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="View\ProductCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\ProductCategory.Designer.cs">
+      <DependentUpon>ProductCategory.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Migrations\202104201649412_New.resx">
       <DependentUpon>202104201649412_New.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104260129265_Add Settings.resx">
+      <DependentUpon>202104260129265_Add Settings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104260151586_Add Cost Code.resx">
+      <DependentUpon>202104260151586_Add Cost Code.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104260218187_Add Category.resx">
+      <DependentUpon>202104260218187_Add Category.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -109,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ProductCategory.resx">
+      <DependentUpon>ProductCategory.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -141,6 +173,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\blurred-gradient-green-yellow-background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\products.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stand.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

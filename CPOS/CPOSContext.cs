@@ -15,5 +15,7 @@ namespace CPOS
         public DbSet<Employee> Employees { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Permission> Permissions { get; set; }
+        public DbSet<Settings> Settings { get; set; }
+        public DbSet<Category> Categories { get; set; }
     }
 }

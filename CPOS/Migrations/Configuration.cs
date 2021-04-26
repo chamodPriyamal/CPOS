@@ -49,6 +49,23 @@
             usr.Permissions = Permissions;
             context.Users.AddOrUpdate(usr);
             context.SaveChanges();
+
+            //Add Default Settings
+            Settings s = new Settings();
+            s.Id = 1;
+            s.BusinessName = "TechWiz Inc.";
+            s.BusinessAddress = "Main Street - Padavi Parakramapura";
+            s.BusinessContact = "071 790 8311 / 070 591 0695";
+            s.CostCode = "pqsrnmwzxv/";
+            context.Settings.AddOrUpdate(s);
+            context.SaveChanges();
+
+            //Add Default Category
+            Category cat = new Category();
+            cat.Id = 1;
+            cat.Name = "Default";
+            context.Categories.AddOrUpdate(cat);
+            context.SaveChanges();
         }
     }
 }

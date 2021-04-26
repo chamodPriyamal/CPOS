@@ -103,6 +103,16 @@ namespace CPOS.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap products {
+            get {
+                object obj = ResourceManager.GetObject("products", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap profile {
             get {
                 object obj = ResourceManager.GetObject("profile", resourceCulture);
@@ -116,6 +126,16 @@ namespace CPOS.Properties {
         internal static System.Drawing.Bitmap smooth_dark_blue_background {
             get {
                 object obj = ResourceManager.GetObject("smooth-dark-blue-background", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap stand {
+            get {
+                object obj = ResourceManager.GetObject("stand", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

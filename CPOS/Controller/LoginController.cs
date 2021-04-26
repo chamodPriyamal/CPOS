@@ -7,7 +7,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using CPOS.Exceptions;
 
 namespace CPOS.Controller
 {
@@ -22,7 +21,7 @@ namespace CPOS.Controller
                 if (username == "" || password == "")
                 {
                     return true;
-                    throw new UsernameOrPasswordEmptyException();
+                    throw new Exception("Username or Password Cannot be Empty!");
                 }
                 else
                 {
@@ -30,7 +29,7 @@ namespace CPOS.Controller
                     if (UserFromDB == null)
                     {
                         return true;
-                        throw new UsernameNotFoundException();               
+                        throw new Exception("Username Cannot be Found!");               
                     }
                     else
                     {
@@ -50,7 +49,7 @@ namespace CPOS.Controller
                             else
                             {
                                 return true;
-                                throw new InvalidCredentialsException();
+                                throw new Exception("Invalid Username or Password!");
                             }
                         }
                     }
