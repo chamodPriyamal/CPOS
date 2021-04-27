@@ -10,18 +10,18 @@ using System.Windows.Forms;
 
 namespace CPOS.View
 {
-    public partial class ProductsMenu : Form
+    public partial class CustomerMenu : Form
     {
-        public ProductsMenu()
+        public CustomerMenu()
         {
             InitializeComponent();
         }
 
-        private void btnCategories_Click(object sender, EventArgs e)
+        private void btnAddCust_Click(object sender, EventArgs e)
         {
             try
             {
-                if (Controller.PermissionController.CheckPermission(Model.PermissionType.PRODUCT_CATEGORY_VIEW))
+                if (Controller.PermissionController.CheckPermission(Model.PermissionType.CUSTOMER_ADD))
                 {
                     new ProductCategory().Show();
                 }
@@ -34,16 +34,6 @@ namespace CPOS.View
             {
                 Helper.MessageHelper.AlertError(ex.Message);
             }
-        }
-
-        private void btnClose_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void ProductsMenu_Load(object sender, EventArgs e)
-        {
-
         }
     }
 }

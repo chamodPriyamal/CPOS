@@ -47,7 +47,7 @@ namespace CPOS.View
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(72, 97);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(225, 60);
+            this.label1.Size = new System.Drawing.Size(178, 48);
             this.label1.TabIndex = 16;
             this.label1.Text = "Products";
             // 
@@ -141,13 +141,14 @@ namespace CPOS.View
             this.loggedUser1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.loggedUser1.BackColor = System.Drawing.Color.Transparent;
             this.loggedUser1.Location = new System.Drawing.Point(1041, 97);
+            this.loggedUser1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.loggedUser1.Name = "loggedUser1";
             this.loggedUser1.Size = new System.Drawing.Size(310, 149);
             this.loggedUser1.TabIndex = 24;
             // 
             // ProductsMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CPOS.Properties.Resources.smooth_dark_blue_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -168,6 +169,7 @@ namespace CPOS.View
             this.Text = "ProductsMenu";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.ProductsMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

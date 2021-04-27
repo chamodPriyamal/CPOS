@@ -12,9 +12,16 @@ namespace CPOS.View
 {
     public partial class AddCustomer : Form
     {
+        private CPOSContext context;
         public AddCustomer()
         {
             InitializeComponent();
+            context = Controller.DatabaseController.GetConnection();
+        }
+
+        private void AddCustomer_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

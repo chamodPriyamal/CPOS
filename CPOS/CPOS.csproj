@@ -99,6 +99,7 @@
     <Compile Include="Helper\MessageHelper.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\PermissionType.cs" />
     <Compile Include="Model\Settings.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
@@ -113,6 +114,12 @@
     </Compile>
     <Compile Include="LoggedUser.Designer.cs">
       <DependentUpon>LoggedUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\CustomerMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\CustomerMenu.Designer.cs">
+      <DependentUpon>CustomerMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="View\EditCustomer.cs">
       <SubType>Form</SubType>
@@ -179,6 +186,9 @@
     <EmbeddedResource Include="LoggedUser.resx">
       <DependentUpon>LoggedUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="View\CustomerMenu.resx">
+      <DependentUpon>CustomerMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\EditCustomer.resx">
       <DependentUpon>EditCustomer.cs</DependentUpon>
     </EmbeddedResource>
@@ -196,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="View\ProductsMenu.resx">
       <DependentUpon>ProductsMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\ViewCustomer.resx">
+      <DependentUpon>ViewCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -38,7 +38,7 @@ namespace CPOS.View
         {
             try
             {
-                if (Controller.PermissionController.check_product_category_add())
+                if (Controller.PermissionController.CheckPermission(Model.PermissionType.PRODUCT_CATEGORY_ADD))
                 {
                     controller.RegisterCategory(new Model.Category { Name = txtNew.Text });
                     txtNew.Clear();
@@ -59,7 +59,7 @@ namespace CPOS.View
         {
             try
             {
-                if (Controller.PermissionController.check_product_category_edit())
+                if (Controller.PermissionController.CheckPermission(Model.PermissionType.PRODUCT_CATEGORY_EDIT))
                 {
                     int id = int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString());
                     var cat = context.Categories.FirstOrDefault(x => x.Id == id);
@@ -85,7 +85,7 @@ namespace CPOS.View
         {
             try
             {
-                if (Controller.PermissionController.check_product_category_delete())
+                if (Controller.PermissionController.CheckPermission(Model.PermissionType.PRODUCT_CATEGORY_DELETE))
                 {
                     int id = int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString());
                     var cat = context.Categories.FirstOrDefault(x => x.Id == id);
