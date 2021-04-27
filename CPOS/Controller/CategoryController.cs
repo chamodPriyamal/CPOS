@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,12 +13,11 @@ namespace CPOS.Controller
     public class CategoryController
     {
         private CPOSContext context;
-
-        public CategoryController()
+        public CategoryController(CPOSContext  context)
         {
-            context = DatabaseController.GetConnection();
+            this.context = context;
+            context.Categories.Load();
         }
-
         public void RegisterCategory(Category cat)
         {
             try
@@ -86,6 +87,10 @@ namespace CPOS.Controller
             {
                 Helper.MessageHelper.AlertError(ex.Message);
             }
+        }
+        public BindingList<Category> GetCategoryListForDataGrid()
+        {
+            return context.Categories.Local.ToBindingList<Category>();
         }
     }
 }

@@ -45,15 +45,15 @@ namespace CPOS.Helper
 
         public static void AlertRegisterSuccess(string msg = "New Record Insert Success!")
         {
-            MessageBox.Show(msg, "Success", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(msg, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         public static void AlertRemoveSuccess(string msg = "Record Deletion Success!")
         {
-            MessageBox.Show(msg, "Success", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(msg, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
         public static void AlertUpdateSuccess(string msg = "Record Update Success!")
         {
-            MessageBox.Show(msg, "Success", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            MessageBox.Show(msg, "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
     }

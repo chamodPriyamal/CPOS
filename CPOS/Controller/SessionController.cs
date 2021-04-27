@@ -10,12 +10,13 @@ namespace CPOS.Controller
     {
         public static Model.Employee emp;
         public static Model.User usr;
-        public static Model.Permission[] Permissions;
+        public static List<Model.Permission> Permissions;
 
         public static void StartSession(Model.Employee emp , Model.User usr)
         {
             SessionController.emp = emp;
             SessionController.usr = usr;
+            Permissions = usr.Permissions.ToList();
         }
 
         public static void EndSession()

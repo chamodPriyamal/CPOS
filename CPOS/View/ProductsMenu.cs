@@ -17,14 +17,28 @@ namespace CPOS.View
             InitializeComponent();
         }
 
+        private void btnCategories_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Controller.PermissionController.check_product_category_view())
+                {
+                    new ProductCategory().Show();
+                }
+                else
+                {
+                    throw new Exception("Access Denied.!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Helper.MessageHelper.AlertError(ex.Message);
+            }
+        }
+
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void btnCategories_Click(object sender, EventArgs e)
-        {
-            new ProductCategory().Show();
         }
     }
 }

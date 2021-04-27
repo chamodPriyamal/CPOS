@@ -20,6 +20,10 @@
             context.Database.Create();
             List<Permission> Permissions = new List<Permission>();
             Permissions.Add(new Permission { Code = 1, Name = "LOGIN" });
+            Permissions.Add(new Permission { Code = 2, Name = "PRODUCT_CATEGORY_VIEW" });
+            Permissions.Add(new Permission { Code = 3, Name = "PRODUCT_CATEGORY_ADD" });
+            Permissions.Add(new Permission { Code = 4, Name = "PRODUCT_CATEGORY_EDIT" });
+            Permissions.Add(new Permission { Code = 5, Name = "PRODUCT_CATEGORY_DELETE" });
 
 
             //Add Default Employee
