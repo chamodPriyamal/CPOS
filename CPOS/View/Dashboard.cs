@@ -42,5 +42,10 @@ namespace CPOS.View
             lblDate.Text = "Date : " + DateTime.Now.ToLongDateString();
             lblTime.Text = "Time : " + DateTime.Now.ToLongTimeString();
         }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            new ProductsMenu().Show();
+        }
     }
 }

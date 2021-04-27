@@ -17,5 +17,7 @@ namespace CPOS
         public DbSet<Permission> Permissions { get; set; }
         public DbSet<Settings> Settings { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Log> Logs { get; set; }
+
     }
 }
