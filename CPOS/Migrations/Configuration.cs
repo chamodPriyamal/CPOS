@@ -73,6 +73,17 @@
             cat.Name = "Default";
             context.Categories.AddOrUpdate(cat);
             context.SaveChanges();
+
+            //Add Default Customer
+            Customer cust = new Customer();
+            cust.Id = 1;
+            cust.Name = "Walk-In";
+            cust.Address = "-";
+            cust.Mobile = "0";
+            cust.Nic = "0";
+            cust.LandLine = "0";
+            context.Customers.AddOrUpdate(cust);
+            context.SaveChanges();
         }
     }
 }

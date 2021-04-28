@@ -64,6 +64,7 @@
   <ItemGroup>
     <Compile Include="Controller\CategoryController.cs" />
     <Compile Include="Controller\CostCodeController.cs" />
+    <Compile Include="Controller\CustomerController.cs" />
     <Compile Include="Controller\DatabaseController.cs" />
     <Compile Include="Controller\EmployeeController.cs" />
     <Compile Include="Controller\LogController.cs" />
@@ -91,7 +92,12 @@
     <Compile Include="Migrations\202104261508236_Add Logs.designer.cs">
       <DependentUpon>202104261508236_Add Logs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104281215407_Add Customer Table.cs" />
+    <Compile Include="Migrations\202104281215407_Add Customer Table.designer.cs">
+      <DependentUpon>202104281215407_Add Customer Table.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Category.cs" />
+    <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Log.cs" />
     <Compile Include="Model\Permission.cs" />
     <Compile Include="Controller\SessionController.cs" />
@@ -177,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104261508236_Add Logs.resx">
       <DependentUpon>202104261508236_Add Logs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104281215407_Add Customer Table.resx">
+      <DependentUpon>202104281215407_Add Customer Table.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

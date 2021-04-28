@@ -12,7 +12,7 @@ namespace CPOS.View
 {
     public partial class AddCustomer : Form
     {
-        private CPOSContext context;
+        
         public AddCustomer()
         {
             InitializeComponent();
