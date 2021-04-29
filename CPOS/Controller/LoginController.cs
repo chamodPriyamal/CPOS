@@ -7,6 +7,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using System.Windows.Forms;
 
 namespace CPOS.Controller
 {
@@ -28,14 +30,13 @@ namespace CPOS.Controller
                     var UserFromDB = context.Users.FirstOrDefault(x => x.Username == username);
                     if (UserFromDB == null)
                     {
-                        return true;
                         throw new Exception("Username Cannot be Found!");               
                     }
                     else
                     {
                         if(UserFromDB.IsActive == false)
                         {
-                            return false;
+                            throw new Exception("User is not Active!");
                         }
                         else
                         {
@@ -48,7 +49,6 @@ namespace CPOS.Controller
                             }
                             else
                             {
-                                return true;
                                 throw new Exception("Invalid Username or Password!");
                             }
                         }
@@ -58,7 +58,7 @@ namespace CPOS.Controller
             catch (Exception ex)
             {
                 Helper.MessageHelper.AlertError(ex.Message);
-                return true;
+                return false;
             }
         }
         public static void Logout()

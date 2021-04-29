@@ -39,13 +39,13 @@ namespace CPOS.View
             this.label7 = new System.Windows.Forms.Label();
             this.btnNew = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtName = new System.Windows.Forms.TextBox();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.txtNic = new System.Windows.Forms.TextBox();
+            this.txtLandLine = new System.Windows.Forms.TextBox();
+            this.txtMobile = new System.Windows.Forms.TextBox();
+            this.txtDueAmount = new System.Windows.Forms.TextBox();
+            this.txtLoyalPoints = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // btnClose
@@ -150,6 +150,7 @@ namespace CPOS.View
             this.btnNew.TabIndex = 26;
             this.btnNew.Text = "Save";
             this.btnNew.UseVisualStyleBackColor = false;
+            this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
             // label8
             // 
@@ -161,55 +162,55 @@ namespace CPOS.View
             this.label8.TabIndex = 27;
             this.label8.Text = "Loyal Points :";
             // 
-            // textBox1
+            // txtName
             // 
-            this.textBox1.Location = new System.Drawing.Point(212, 158);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(322, 33);
-            this.textBox1.TabIndex = 28;
+            this.txtName.Location = new System.Drawing.Point(212, 158);
+            this.txtName.Name = "txtName";
+            this.txtName.Size = new System.Drawing.Size(322, 33);
+            this.txtName.TabIndex = 28;
             // 
-            // textBox2
+            // txtAddress
             // 
-            this.textBox2.Location = new System.Drawing.Point(212, 197);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(322, 101);
-            this.textBox2.TabIndex = 29;
+            this.txtAddress.Location = new System.Drawing.Point(212, 197);
+            this.txtAddress.Multiline = true;
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(322, 101);
+            this.txtAddress.TabIndex = 29;
             // 
-            // textBox3
+            // txtNic
             // 
-            this.textBox3.Location = new System.Drawing.Point(212, 304);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(322, 33);
-            this.textBox3.TabIndex = 30;
+            this.txtNic.Location = new System.Drawing.Point(212, 304);
+            this.txtNic.Name = "txtNic";
+            this.txtNic.Size = new System.Drawing.Size(322, 33);
+            this.txtNic.TabIndex = 30;
             // 
-            // textBox4
+            // txtLandLine
             // 
-            this.textBox4.Location = new System.Drawing.Point(212, 343);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(322, 33);
-            this.textBox4.TabIndex = 31;
+            this.txtLandLine.Location = new System.Drawing.Point(212, 343);
+            this.txtLandLine.Name = "txtLandLine";
+            this.txtLandLine.Size = new System.Drawing.Size(322, 33);
+            this.txtLandLine.TabIndex = 31;
             // 
-            // textBox5
+            // txtMobile
             // 
-            this.textBox5.Location = new System.Drawing.Point(212, 382);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(322, 33);
-            this.textBox5.TabIndex = 32;
+            this.txtMobile.Location = new System.Drawing.Point(212, 382);
+            this.txtMobile.Name = "txtMobile";
+            this.txtMobile.Size = new System.Drawing.Size(322, 33);
+            this.txtMobile.TabIndex = 32;
             // 
-            // textBox6
+            // txtDueAmount
             // 
-            this.textBox6.Location = new System.Drawing.Point(212, 421);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(322, 33);
-            this.textBox6.TabIndex = 33;
+            this.txtDueAmount.Location = new System.Drawing.Point(212, 421);
+            this.txtDueAmount.Name = "txtDueAmount";
+            this.txtDueAmount.Size = new System.Drawing.Size(322, 33);
+            this.txtDueAmount.TabIndex = 33;
             // 
-            // textBox7
+            // txtLoyalPoints
             // 
-            this.textBox7.Location = new System.Drawing.Point(212, 460);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(322, 33);
-            this.textBox7.TabIndex = 34;
+            this.txtLoyalPoints.Location = new System.Drawing.Point(212, 460);
+            this.txtLoyalPoints.Name = "txtLoyalPoints";
+            this.txtLoyalPoints.Size = new System.Drawing.Size(322, 33);
+            this.txtLoyalPoints.TabIndex = 34;
             // 
             // EditCustomer
             // 
@@ -218,13 +219,13 @@ namespace CPOS.View
             this.BackgroundImage = global::CPOS.Properties.Resources.smooth_dark_blue_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(596, 603);
-            this.Controls.Add(this.textBox7);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtLoyalPoints);
+            this.Controls.Add(this.txtDueAmount);
+            this.Controls.Add(this.txtMobile);
+            this.Controls.Add(this.txtLandLine);
+            this.Controls.Add(this.txtNic);
+            this.Controls.Add(this.txtAddress);
+            this.Controls.Add(this.txtName);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.label7);
@@ -243,6 +244,7 @@ namespace CPOS.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AddCustomer";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.EditCustomer_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -260,12 +262,12 @@ namespace CPOS.View
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtName;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.TextBox txtNic;
+        private System.Windows.Forms.TextBox txtLandLine;
+        private System.Windows.Forms.TextBox txtMobile;
+        private System.Windows.Forms.TextBox txtDueAmount;
+        private System.Windows.Forms.TextBox txtLoyalPoints;
     }
 }

@@ -23,7 +23,31 @@ namespace CPOS.View
             {
                 if (Controller.PermissionController.CheckPermission(Model.PermissionType.CUSTOMER_ADD))
                 {
-                    new ProductCategory().Show();
+                    new AddCustomer().Show();
+                }
+                else
+                {
+                    throw new Exception("Access Denied.!");
+                }
+            }
+            catch (Exception ex)
+            {
+                Helper.MessageHelper.AlertError(ex.Message);
+            }
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btnCustList_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Controller.PermissionController.CheckPermission(Model.PermissionType.CUSTOMER_VIEW))
+                {
+                    new ViewCustomer().Show();
                 }
                 else
                 {

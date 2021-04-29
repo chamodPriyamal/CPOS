@@ -30,37 +30,12 @@ namespace CPOS.View
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CustomerMenu));
-            this.loggedUser1 = new CPOS.LoggedUser();
-            this.btnClose = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAddCust = new System.Windows.Forms.Button();
             this.btnCustList = new System.Windows.Forms.Button();
+            this.loggedUser1 = new CPOS.LoggedUser();
+            this.btnClose = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // loggedUser1
-            // 
-            this.loggedUser1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.loggedUser1.BackColor = System.Drawing.Color.Transparent;
-            this.loggedUser1.Location = new System.Drawing.Point(1041, 97);
-            this.loggedUser1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.loggedUser1.Name = "loggedUser1";
-            this.loggedUser1.Size = new System.Drawing.Size(310, 149);
-            this.loggedUser1.TabIndex = 25;
-            // 
-            // btnClose
-            // 
-            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImage = global::CPOS.Properties.Resources.close;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(1336, 13);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(47, 43);
-            this.btnClose.TabIndex = 26;
-            this.btnClose.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -68,9 +43,10 @@ namespace CPOS.View
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei UI", 27.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(43, 39);
+            this.label1.Location = new System.Drawing.Point(72, 97);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(210, 48);
+            this.label1.Size = new System.Drawing.Size(266, 60);
             this.label1.TabIndex = 27;
             this.label1.Text = "Customers";
             // 
@@ -84,7 +60,7 @@ namespace CPOS.View
             this.btnAddCust.Image = global::CPOS.Properties.Resources.customer;
             this.btnAddCust.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAddCust.Location = new System.Drawing.Point(-8, 249);
-            this.btnAddCust.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddCust.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnAddCust.Name = "btnAddCust";
             this.btnAddCust.Size = new System.Drawing.Size(269, 57);
             this.btnAddCust.TabIndex = 28;
@@ -102,29 +78,59 @@ namespace CPOS.View
             this.btnCustList.Image = ((System.Drawing.Image)(resources.GetObject("btnCustList.Image")));
             this.btnCustList.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCustList.Location = new System.Drawing.Point(-8, 310);
-            this.btnCustList.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCustList.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnCustList.Name = "btnCustList";
             this.btnCustList.Size = new System.Drawing.Size(269, 57);
             this.btnCustList.TabIndex = 29;
             this.btnCustList.Text = "Customer List";
             this.btnCustList.UseVisualStyleBackColor = false;
+            this.btnCustList.Click += new System.EventHandler(this.btnCustList_Click);
+            // 
+            // loggedUser1
+            // 
+            this.loggedUser1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.loggedUser1.BackColor = System.Drawing.Color.Transparent;
+            this.loggedUser1.Location = new System.Drawing.Point(944, 97);
+            this.loggedUser1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.loggedUser1.Name = "loggedUser1";
+            this.loggedUser1.Size = new System.Drawing.Size(413, 183);
+            this.loggedUser1.TabIndex = 25;
+            // 
+            // btnClose
+            // 
+            this.btnClose.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImage = global::CPOS.Properties.Resources.close;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClose.FlatAppearance.BorderSize = 0;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnClose.Location = new System.Drawing.Point(1336, 13);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(47, 43);
+            this.btnClose.TabIndex = 30;
+            this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // CustomerMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CPOS.Properties.Resources.smooth_dark_blue_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1396, 821);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnCustList);
             this.Controls.Add(this.btnAddCust);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.loggedUser1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CustomerMenu";
             this.Text = "CustomerMenu";
+            this.TopMost = true;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,9 +139,9 @@ namespace CPOS.View
         #endregion
 
         private LoggedUser loggedUser1;
-        private System.Windows.Forms.Button btnClose;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnAddCust;
         private System.Windows.Forms.Button btnCustList;
+        private System.Windows.Forms.Button btnClose;
     }
 }

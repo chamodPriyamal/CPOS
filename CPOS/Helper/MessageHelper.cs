@@ -57,4 +57,18 @@ namespace CPOS.Helper
         }
 
     }
+
+    public static class ClearForm
+    {
+        public static void ClearAllTextFields(Form f)
+        {
+            foreach (Control ctrl in f.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    ctrl.Text = "";
+                }
+            }
+        }
+    }
 }

@@ -11,18 +11,17 @@ namespace CPOS.Controller
 
         public static bool CheckPermission(Model.PermissionType ptype)
         {
-            foreach (var permission in SessionController.usr.Permissions)
+            bool IsGranted = false;
+
+            var permission = SessionController.Permissions.FirstOrDefault(x => x.Code == (int) ptype);
+            if (permission == null)
             {
-                if (permission.Code == (int)ptype)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
+                return false;
             }
-            return true;
+            else
+            {
+                return true;
+            }
         }
     }
 }

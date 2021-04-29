@@ -29,8 +29,9 @@
             Permissions.Add(new Permission { Code = 8, Name = "CUSTOMER_EDIT" });
             Permissions.Add(new Permission { Code = 9, Name = "CUSTOMER_DELETE" });
 
+
             //Add Default Employee
-                Employee emp = new Employee();
+            Employee emp = new Employee();
             emp.Name = "Administrator";
             emp.Address = "-";
             emp.Mobile = "-";
