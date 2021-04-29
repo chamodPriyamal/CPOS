@@ -37,6 +37,7 @@ namespace CPOS.View
             this.button4 = new System.Windows.Forms.Button();
             this.btnClose = new System.Windows.Forms.Button();
             this.loggedUser1 = new CPOS.LoggedUser();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -47,7 +48,7 @@ namespace CPOS.View
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(72, 97);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 48);
+            this.label1.Size = new System.Drawing.Size(225, 60);
             this.label1.TabIndex = 16;
             this.label1.Text = "Products";
             // 
@@ -78,12 +79,12 @@ namespace CPOS.View
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.Location = new System.Drawing.Point(-8, 310);
+            this.button2.Location = new System.Drawing.Point(-8, 371);
             this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(269, 57);
             this.button2.TabIndex = 19;
-            this.button2.Text = "Products";
+            this.button2.Text = "Products List";
             this.button2.UseVisualStyleBackColor = false;
             // 
             // button3
@@ -95,7 +96,7 @@ namespace CPOS.View
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.Location = new System.Drawing.Point(-8, 371);
+            this.button3.Location = new System.Drawing.Point(-8, 432);
             this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(269, 57);
@@ -112,7 +113,7 @@ namespace CPOS.View
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.Location = new System.Drawing.Point(-8, 432);
+            this.button4.Location = new System.Drawing.Point(-8, 493);
             this.button4.Margin = new System.Windows.Forms.Padding(2);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(269, 57);
@@ -141,18 +142,37 @@ namespace CPOS.View
             this.loggedUser1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.loggedUser1.BackColor = System.Drawing.Color.Transparent;
             this.loggedUser1.Location = new System.Drawing.Point(1041, 97);
-            this.loggedUser1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.loggedUser1.Margin = new System.Windows.Forms.Padding(2);
             this.loggedUser1.Name = "loggedUser1";
             this.loggedUser1.Size = new System.Drawing.Size(310, 149);
             this.loggedUser1.TabIndex = 24;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.Location = new System.Drawing.Point(-8, 310);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(269, 57);
+            this.button1.TabIndex = 25;
+            this.button1.Text = "Add New Product";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // ProductsMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 21F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 27F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::CPOS.Properties.Resources.smooth_dark_blue_background;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1396, 821);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.loggedUser1);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.button4);
@@ -184,5 +204,6 @@ namespace CPOS.View
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnClose;
         private LoggedUser loggedUser1;
+        private System.Windows.Forms.Button button1;
     }
 }

@@ -17,5 +17,10 @@ namespace CPOS.Model
         CUSTOMER_ADD,
         CUSTOMER_EDIT,
         CUSTOMER_DELETE,
+        PRODUCT_ADD,
+        PRODUCT_VIEW,
+        PRODUCT_EDIT,
+        PRODUCT_DELETE,
+
     }
 }

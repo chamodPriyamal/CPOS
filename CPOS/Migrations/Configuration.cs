@@ -24,10 +24,21 @@
             Permissions.Add(new Permission { Code = 3, Name = "PRODUCT_CATEGORY_ADD" });
             Permissions.Add(new Permission { Code = 4, Name = "PRODUCT_CATEGORY_EDIT" });
             Permissions.Add(new Permission { Code = 5, Name = "PRODUCT_CATEGORY_DELETE" });
+
             Permissions.Add(new Permission { Code = 6, Name = "CUSTOMER_VIEW" });
             Permissions.Add(new Permission { Code = 7, Name = "CUSTOMER_ADD" });
             Permissions.Add(new Permission { Code = 8, Name = "CUSTOMER_EDIT" });
             Permissions.Add(new Permission { Code = 9, Name = "CUSTOMER_DELETE" });
+
+            Permissions.Add(new Permission { Code = 10, Name = "PRODUCT_ADD" });
+            Permissions.Add(new Permission { Code = 11, Name = "PRODUCT_VIEW" });
+            Permissions.Add(new Permission { Code = 12, Name = "PRODUCT_EDIT" });
+            Permissions.Add(new Permission { Code = 13, Name = "PRODUCT_DELETE" });
+
+            Permissions.Add(new Permission { Code = 14, Name = "PRODUCT_BATCH_ADD" });
+            Permissions.Add(new Permission { Code = 15, Name = "PRODUCT_BATCH_VIEW" });
+            Permissions.Add(new Permission { Code = 16, Name = "PRODUCT_BATCH_EDIT" });
+            Permissions.Add(new Permission { Code = 17, Name = "PRODUCT_BATCH_DELETE" });
 
 
             //Add Default Employee

@@ -27,7 +27,7 @@ namespace CPOS.View
                 }
                 else
                 {
-                    throw new Exception("Access Denied.!");
+                    throw new Exception("Access Denied.! (PRODUCT_CATEGORY_VIEW)");
                 }
             }
             catch (Exception ex)
@@ -44,6 +44,18 @@ namespace CPOS.View
         private void ProductsMenu_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (Controller.PermissionController.CheckPermission(Model.PermissionType.PRODUCT_ADD))
+            {
+                new AddProduct().Show();
+            }
+            else
+            {
+                throw new Exception("Access Denied.! (PRODUCT_ADD");
+            }
         }
     }
 }

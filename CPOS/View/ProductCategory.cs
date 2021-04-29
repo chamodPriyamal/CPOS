@@ -20,7 +20,7 @@ namespace CPOS.View
         {
             InitializeComponent();
             context = new CPOSContext();
-            controller = new Controller.CategoryController(context);
+            controller = new Controller.CategoryController();
         }
 
         private void btnClose_Click(object sender, EventArgs e)

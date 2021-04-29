@@ -45,12 +45,18 @@
     <Reference Include="InputBox, Version=1.0.0.1, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Essy.Tools.InputBox.1.0.0\lib\net20\InputBox.dll</HintPath>
     </Reference>
+    <Reference Include="NetBarcode, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NetBarcode.1.4.0\lib\netstandard2.0\NetBarcode.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.Annotations, Version=4.2.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.ComponentModel.Annotations.5.0.0\lib\net461\System.ComponentModel.Annotations.dll</HintPath>
     </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Drawing.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Drawing.Common.4.5.0\lib\net461\System.Drawing.Common.dll</HintPath>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -62,6 +68,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controller\BarcodeController.cs" />
     <Compile Include="Controller\CategoryController.cs" />
     <Compile Include="Controller\CostCodeController.cs" />
     <Compile Include="Controller\CustomerController.cs" />
@@ -96,6 +103,30 @@
     <Compile Include="Migrations\202104281215407_Add Customer Table.designer.cs">
       <DependentUpon>202104281215407_Add Customer Table.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104291002488_Add Product Table.cs" />
+    <Compile Include="Migrations\202104291002488_Add Product Table.designer.cs">
+      <DependentUpon>202104291002488_Add Product Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104291005576_Add Product Batch Table.cs" />
+    <Compile Include="Migrations\202104291005576_Add Product Batch Table.designer.cs">
+      <DependentUpon>202104291005576_Add Product Batch Table.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104291056114_RollBack.cs" />
+    <Compile Include="Migrations\202104291056114_RollBack.designer.cs">
+      <DependentUpon>202104291056114_RollBack.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104291057435_Products.cs" />
+    <Compile Include="Migrations\202104291057435_Products.designer.cs">
+      <DependentUpon>202104291057435_Products.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104291201547_RollBack2.cs" />
+    <Compile Include="Migrations\202104291201547_RollBack2.designer.cs">
+      <DependentUpon>202104291201547_RollBack2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104291206282_Products2.cs" />
+    <Compile Include="Migrations\202104291206282_Products2.designer.cs">
+      <DependentUpon>202104291206282_Products2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Log.cs" />
@@ -106,6 +137,8 @@
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Employee.cs" />
     <Compile Include="Model\PermissionType.cs" />
+    <Compile Include="Model\Product.cs" />
+    <Compile Include="Model\ProductBatch.cs" />
     <Compile Include="Model\Settings.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
@@ -120,6 +153,12 @@
     </Compile>
     <Compile Include="LoggedUser.Designer.cs">
       <DependentUpon>LoggedUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\AddProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\AddProduct.Designer.cs">
+      <DependentUpon>AddProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="View\CustomerMenu.cs">
       <SubType>Form</SubType>
@@ -187,6 +226,24 @@
     <EmbeddedResource Include="Migrations\202104281215407_Add Customer Table.resx">
       <DependentUpon>202104281215407_Add Customer Table.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104291002488_Add Product Table.resx">
+      <DependentUpon>202104291002488_Add Product Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104291005576_Add Product Batch Table.resx">
+      <DependentUpon>202104291005576_Add Product Batch Table.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104291056114_RollBack.resx">
+      <DependentUpon>202104291056114_RollBack.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104291057435_Products.resx">
+      <DependentUpon>202104291057435_Products.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104291201547_RollBack2.resx">
+      <DependentUpon>202104291201547_RollBack2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104291206282_Products2.resx">
+      <DependentUpon>202104291206282_Products2.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -194,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="LoggedUser.resx">
       <DependentUpon>LoggedUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\AddProduct.resx">
+      <DependentUpon>AddProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\CustomerMenu.resx">
       <DependentUpon>CustomerMenu.cs</DependentUpon>
@@ -277,6 +337,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\diskette.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

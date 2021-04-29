@@ -13,9 +13,9 @@ namespace CPOS.Controller
     public class CategoryController
     {
         private CPOSContext context;
-        public CategoryController(CPOSContext  context)
+        public CategoryController()
         {
-            this.context = context;
+            this.context = DatabaseController.GetConnection();
             context.Categories.Load();
         }
         public void RegisterCategory(Category cat)

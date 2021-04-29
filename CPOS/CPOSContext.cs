@@ -19,6 +19,7 @@ namespace CPOS
         public DbSet<Category> Categories { get; set; }
         public DbSet<Log> Logs { get; set; }
         public DbSet<Customer> Customers { get; set; }
-
+        public DbSet<Product> Products { get; set; }
+        public DbSet<ProductBatch>ProductBatches { get; set; }
     }
 }
