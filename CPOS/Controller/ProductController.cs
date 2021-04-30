@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CPOS.Helper;
 using CPOS.Model;
 using NetBarcode;
 using Type = NetBarcode.Type;
@@ -18,45 +19,40 @@ namespace CPOS.Controller
         {
             context = new CPOSContext();
         }
-        
-        public void Register(Product p , ProductBatch pb)
+
+        public void Register(Product product, ProductBatch batch)
         {
             try
             {
                 if (PermissionController.CheckPermission(PermissionType.PRODUCT_ADD))
                 {
-                    if (Helper.MessageHelper.AlertRegisterConfirmation() == DialogResult.Yes)
+                    if (product.BarcodeData == "")
                     {
-                        pb.Product = p;
-                        if (p.BarcodeData == "")
-                        {
-                            p.BarcodeData = "0";
-                            p.BarcodeImage = BarcodeController.GetBarcodeBytes("0");
-                            context.ProductBatches.Add(pb);
-                            context.SaveChanges();
-                            p.BarcodeData = p.Id.ToString();
-                            p.BarcodeImage = BarcodeController.GetBarcodeBytes(p.Id.ToString());
-                            context.SaveChanges();
-                            Helper.MessageHelper.AlertRegisterSuccess();
-                        }
-                        else
-                        {
-                            p.BarcodeImage = BarcodeController.GetBarcodeBytes(p.BarcodeData);
-                            context.ProductBatches.Add(pb);
-                            context.SaveChanges();
-                            Helper.MessageHelper.AlertRegisterSuccess();
-                        }
+                        context.Products.Add(product);
+                        context.SaveChanges();
+                        product.BarcodeData = product.Id.ToString();
+                        product.BarcodeImage = BarcodeController.GetBarcodeBytes(product.BarcodeData.ToString());
+                        context.SaveChanges();
+                        batch.Product = product;
+                        context.ProductBatches.Add(batch);
+                        context.SaveChanges();
+                        MessageHelper.AlertRegisterSuccess();
                     }
-                }
-                else
-                {
-                    throw new Exception("Access Denied! (PRODUCT_ADD)");
+                    else
+                    {
+                        context.Products.Add(product);
+                        context.SaveChanges();
+                        batch.Product = product;
+                        context.ProductBatches.Add(batch);
+                        context.SaveChanges();
+                        MessageHelper.AlertRegisterSuccess();
+                    }
                 }
             }
             catch (Exception e)
             {
-               Helper.MessageHelper.AlertError(e.Message);
-            }   
+                Helper.MessageHelper.AlertError(e.Message);
+            }
         }
     }
 }

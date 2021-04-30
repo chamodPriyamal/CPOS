@@ -21,6 +21,7 @@ namespace CPOS.Model
         PRODUCT_VIEW,
         PRODUCT_EDIT,
         PRODUCT_DELETE,
+        SUPPLIER_ADD,
 
     }
 }

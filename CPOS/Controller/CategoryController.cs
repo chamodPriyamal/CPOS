@@ -90,7 +90,25 @@ namespace CPOS.Controller
         }
         public BindingList<Category> GetCategoryListForDataGrid()
         {
+            context.Categories.Load();
             return context.Categories.Local.ToBindingList<Category>();
+        }
+        public List<Category> GetCategoryListForComboBox()
+        {
+            return context.Categories.ToList<Category>();
+        }
+        public Category GetCategory(int id)
+        {
+            try
+            {
+                var cat = context.Categories.FirstOrDefault(x => x.Id == id);
+                return cat;
+            }
+            catch (Exception ex)
+            {
+                Helper.MessageHelper.AlertError(ex.Message);
+                return null;
+            }
         }
     }
 }

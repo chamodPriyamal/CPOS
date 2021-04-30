@@ -127,6 +127,14 @@
     <Compile Include="Migrations\202104291206282_Products2.designer.cs">
       <DependentUpon>202104291206282_Products2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202104301427450_Rollback3.cs" />
+    <Compile Include="Migrations\202104301427450_Rollback3.designer.cs">
+      <DependentUpon>202104301427450_Rollback3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104301430158_add product 3.cs" />
+    <Compile Include="Migrations\202104301430158_add product 3.designer.cs">
+      <DependentUpon>202104301430158_add product 3.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Log.cs" />
@@ -243,6 +251,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202104291206282_Products2.resx">
       <DependentUpon>202104291206282_Products2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104301427450_Rollback3.resx">
+      <DependentUpon>202104301427450_Rollback3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104301430158_add product 3.resx">
+      <DependentUpon>202104301430158_add product 3.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

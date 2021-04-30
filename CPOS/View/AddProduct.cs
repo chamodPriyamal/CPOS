@@ -17,7 +17,7 @@ namespace CPOS.View
     {
         private ProductController productController;
         private CategoryController categoryController;
-
+        
         public AddProduct()
         {
             InitializeComponent();
@@ -30,38 +30,21 @@ namespace CPOS.View
             Product product = new Product();
             product.Name = txtName.Text;
             product.Description = txtDescription.Text;
-            product.Category = cmbCategory.SelectedItem as Category;
-            if (txtReOrder.Text.Length > 0)
-            {
-                product.ReOrderLevel = decimal.Parse(txtReOrder.Text);
-            }
-            else
-            {
-                product.ReOrderLevel = 3;
-            }
-
-            if (txtBarcode.Text.Length > 0)
+            product.Category = (Category) cmbCategory.SelectedItem;
+            if (txtBarcode.Text != "")
             {
                 product.BarcodeData = txtBarcode.Text;
+                product.BarcodeImage = BarcodeController.GetBarcodeBytes(txtBarcode.Text);
             }
-            else
-            {
-                product.BarcodeData = "";
-            }
-
-            //
 
             ProductBatch batch = new ProductBatch();
             batch.Cost = CostCodeController.CodeToCost(txtCost.Text);
             batch.Cash = decimal.Parse(txtCash.Text);
-            batch.Markup = decimal.Parse(txtMarkup.Text);
             batch.Credit = decimal.Parse(txtCredit.Text);
+            batch.Markup = decimal.Parse(txtMarkup.Text);
             batch.Stock = decimal.Parse(txtStock.Text);
-
-            //
-
+            
             productController.Register(product,batch);
-
         }
 
         private void btnClose_Click(object sender, EventArgs e)
@@ -71,9 +54,10 @@ namespace CPOS.View
 
         private void AddProduct_Load(object sender, EventArgs e)
         {
-            cmbCategory.DataSource = categoryController.GetCategoryListForDataGrid();
+            cmbCategory.DataSource = categoryController.GetCategoryListForComboBox();
             cmbCategory.ValueMember = "Id";
             cmbCategory.DisplayMember = "Name";
+
         }
 
         private void button1_Click(object sender, EventArgs e)

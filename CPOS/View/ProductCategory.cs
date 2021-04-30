@@ -13,13 +13,11 @@ namespace CPOS.View
 {
     public partial class ProductCategory : Form
     {
-        private CPOSContext context;
         private Controller.CategoryController controller;
 
         public ProductCategory()
         {
             InitializeComponent();
-            context = new CPOSContext();
             controller = new Controller.CategoryController();
         }
 
@@ -62,7 +60,7 @@ namespace CPOS.View
                 if (Controller.PermissionController.CheckPermission(Model.PermissionType.PRODUCT_CATEGORY_EDIT))
                 {
                     int id = int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString());
-                    var cat = context.Categories.FirstOrDefault(x => x.Id == id);
+                    var cat = controller.GetCategory(id);
                     cat.Name = txtEdit.Text;
                     controller.UpdateCategory(cat);
                     txtEdit.Clear();
@@ -88,7 +86,7 @@ namespace CPOS.View
                 if (Controller.PermissionController.CheckPermission(Model.PermissionType.PRODUCT_CATEGORY_DELETE))
                 {
                     int id = int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString());
-                    var cat = context.Categories.FirstOrDefault(x => x.Id == id);
+                    var cat = controller.GetCategory(id);
                     controller.RemoveCategory(cat);
                     txtDelete.Clear();
                     txtEdit.Clear();

@@ -13,8 +13,8 @@ namespace CPOS.Model
         [Required] public string  Name { get; set; }
         [Required] public string Description { get; set; } = "-";
         [Required] public virtual Category Category { get; set; }
-        [Required] public decimal ReOrderLevel { get; set; }
-        [Required] public byte [] BarcodeImage { get; set; }
-        [Required] public string BarcodeData { get; set; }
+        [Required] public decimal ReOrderLevel { get; set; } = 0; 
+        public byte [] BarcodeImage { get; set; } 
+        public string BarcodeData { get; set; }
     }
 }
