@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CPOS.Controller;
+using CPOS.Helper;
 using CPOS.Migrations;
 using CPOS.Model;
 
@@ -15,36 +16,70 @@ namespace CPOS.View
 {
     public partial class AddProduct : Form
     {
-        private ProductController productController;
         private CategoryController categoryController;
-        
+        private CPOSContext context;
         public AddProduct()
         {
             InitializeComponent();
-            productController = new ProductController();
             categoryController = new CategoryController();
+            context = DatabaseController.GetConnection();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            Product product = new Product();
-            product.Name = txtName.Text;
-            product.Description = txtDescription.Text;
-            product.Category = (Category) cmbCategory.SelectedItem;
-            if (txtBarcode.Text != "")
+            try
             {
-                product.BarcodeData = txtBarcode.Text;
-                product.BarcodeImage = BarcodeController.GetBarcodeBytes(txtBarcode.Text);
-            }
+                if (PermissionController.CheckPermission(PermissionType.PRODUCT_ADD))
+                {
+                    if (MessageHelper.AlertRegisterConfirmation() == DialogResult.Yes)
+                    {
+                        Product product = new Product();
+                        product.Name = txtName.Text;
+                        product.Description = txtDescription.Text;
+                        product.Category = (Category)cmbCategory.SelectedItem;
+                        product.BarcodeData = txtBarcode.Text;
+                        product.ReOrderLevel = decimal.Parse(txtReOrder.Text);
 
-            ProductBatch batch = new ProductBatch();
-            batch.Cost = CostCodeController.CodeToCost(txtCost.Text);
-            batch.Cash = decimal.Parse(txtCash.Text);
-            batch.Credit = decimal.Parse(txtCredit.Text);
-            batch.Markup = decimal.Parse(txtMarkup.Text);
-            batch.Stock = decimal.Parse(txtStock.Text);
-            
-            productController.Register(product,batch);
+
+                        ProductBatch batch = new ProductBatch();
+                        batch.Cost = CostCodeController.CodeToCost(txtCost.Text);
+                        batch.Cash = decimal.Parse(txtCash.Text);
+                        batch.Credit = decimal.Parse(txtCredit.Text);
+                        batch.Markup = decimal.Parse(txtMarkup.Text);
+                        batch.Stock = decimal.Parse(txtStock.Text);
+
+                        if (product.BarcodeData == "")
+                        {
+                            context.Products.Add(product);
+                            context.SaveChanges();
+                            product.BarcodeData = product.Id.ToString();
+                            product.BarcodeImage = BarcodeController.GetBarcodeBytes(product.BarcodeData.ToString());
+                            context.SaveChanges();
+                            batch.Product = product;
+                            context.ProductBatches.Add(batch);
+                            context.SaveChanges();
+                            MessageHelper.AlertRegisterSuccess();
+                        }
+                        else
+                        {
+                            context.Products.Add(product);
+                            context.SaveChanges();
+                            batch.Product = product;
+                            context.ProductBatches.Add(batch);
+                            context.SaveChanges();
+                            MessageHelper.AlertRegisterSuccess();
+                        }
+                    }
+                }
+                else
+                {
+                    throw new Exception("Access Denied! (PRODUCT_ADD)");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageHelper.AlertError(ex.Message);
+            }
         }
 
         private void btnClose_Click(object sender, EventArgs e)

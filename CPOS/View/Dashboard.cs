@@ -36,5 +36,10 @@ namespace CPOS.View
         {
             new CustomerMenu().Show();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            new Pos().Show();
+        }
     }
 }

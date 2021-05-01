@@ -14,11 +14,16 @@ using CPOS.Model;
 
 namespace CPOS.Controller
 {
-    public static class EmployeeController
+    public class EmployeeController
     {
-        private static CPOSContext context = DatabaseController.GetConnection();
+        private CPOSContext context;
 
-        public static void Register(Employee emp )
+        public EmployeeController()
+        {
+            DatabaseController.GetConnection();
+        }
+
+        public void Register(Employee emp )
         {
             try
             {
@@ -46,7 +51,7 @@ namespace CPOS.Controller
                 Helper.MessageHelper.AlertError(ex.Message);
             }
         }
-        public static void Remove(Employee emp)
+        public void Remove(Employee emp)
         {
             try
             {

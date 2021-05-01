@@ -16,5 +16,6 @@ namespace CPOS.Model
         [Required] public decimal ReOrderLevel { get; set; } = 0; 
         public byte [] BarcodeImage { get; set; } 
         public string BarcodeData { get; set; }
+        public virtual ICollection<ProductBatch> Batches { get; set; }
     }
 }

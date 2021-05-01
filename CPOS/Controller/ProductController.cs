@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data.Entity;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,44 +17,108 @@ namespace CPOS.Controller
     public class ProductController
     {
         private CPOSContext context;
+        private CategoryController categoryController;
 
         public ProductController()
         {
             context = new CPOSContext();
+            context.ProductBatches.Load();
+            context.Products.Load();
         }
 
-        public void Register(Product product, ProductBatch batch)
+        public BindingList<Product> GetProductBindingList()
+        {
+            context.Products.Load();
+            return context.Products.Local.ToBindingList();
+        }
+
+        public BindingList<ProductBatch> GetProductBatcheBindingList()
+        {
+            context.Products.Load();
+            return context.ProductBatches.Local.ToBindingList();
+        }
+
+        public Product GetProduct(int id)
+        {
+            return context.Products.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void DeleteProduct(int id)
         {
             try
             {
-                if (PermissionController.CheckPermission(PermissionType.PRODUCT_ADD))
+                if (PermissionController.CheckPermission(PermissionType.PRODUCT_DELETE))
                 {
-                    if (product.BarcodeData == "")
+                    var p = context.Products.FirstOrDefault(x => x.Id == id);
+                    if (MessageHelper.AlertRemoveConfirmation() == DialogResult.Yes)
                     {
-                        context.Products.Add(product);
+                        context.Products.Remove(p);
                         context.SaveChanges();
-                        product.BarcodeData = product.Id.ToString();
-                        product.BarcodeImage = BarcodeController.GetBarcodeBytes(product.BarcodeData.ToString());
-                        context.SaveChanges();
-                        batch.Product = product;
-                        context.ProductBatches.Add(batch);
-                        context.SaveChanges();
-                        MessageHelper.AlertRegisterSuccess();
                     }
-                    else
-                    {
-                        context.Products.Add(product);
-                        context.SaveChanges();
-                        batch.Product = product;
-                        context.ProductBatches.Add(batch);
-                        context.SaveChanges();
-                        MessageHelper.AlertRegisterSuccess();
-                    }
+                }
+                else
+                {
+                    throw new Exception("Access Denied.! (PRODUCT_DELETE)");
                 }
             }
             catch (Exception e)
             {
-                Helper.MessageHelper.AlertError(e.Message);
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        public void DeleteProductBatch(int id)
+        {
+            try
+            {
+                if (PermissionController.CheckPermission(PermissionType.PRODUCT_DELETE))
+                {
+                    var pb = context.ProductBatches.FirstOrDefault(x => x.Id == id);
+                    if (MessageHelper.AlertRemoveConfirmation() == DialogResult.Yes)
+                    {
+                        context.ProductBatches.Remove(pb);
+                        context.SaveChanges();
+                    }
+                }
+                else
+                {
+                    throw new Exception("Access Denied.! (PRODUCT_DELETE)");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        public ProductBatch GetBatchById(int id)
+        {
+            return context.ProductBatches.FirstOrDefault(x => x.Id == id);
+        }
+
+        public void UpdateProduct()
+        {
+            try
+            {
+                if (PermissionController.CheckPermission(PermissionType.PRODUCT_EDIT))
+                {
+                    if (MessageHelper.AlertUpdateConfirmation() == DialogResult.Yes)
+                    {
+                        context.SaveChanges();
+                        MessageHelper.AlertUpdateSuccess();
+                    }
+                }
+                else
+                {
+                    throw new Exception("Access Denied! (PRODUCT_EDIT)");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
             }
         }
     }

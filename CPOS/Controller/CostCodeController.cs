@@ -41,7 +41,7 @@ namespace CPOS.Controller
             xcode = xcode.Replace(CostCode[7], '7');
             xcode = xcode.Replace(CostCode[8], '8');
             xcode = xcode.Replace(CostCode[9], '9');
-            xcode = xcode.Replace(CostCode[10],'/');
+            xcode = xcode.Replace(CostCode[10],'.');
             return decimal.Parse(xcode);
         }
     }
