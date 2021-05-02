@@ -54,6 +54,7 @@ namespace CPOS.View
             this.btnClose.Size = new System.Drawing.Size(48, 42);
             this.btnClose.TabIndex = 19;
             this.btnClose.UseVisualStyleBackColor = false;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
             // label1
             // 

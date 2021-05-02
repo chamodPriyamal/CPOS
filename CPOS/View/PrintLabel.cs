@@ -32,5 +32,10 @@ namespace CPOS.View
                 txtName.Text = DatabaseController.GetConnection().Products.FirstOrDefault(x => x.Id == id).Name.ToString();
             }
         }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

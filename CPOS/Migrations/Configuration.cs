@@ -18,6 +18,7 @@
         {
             context.Database.Delete();
             context.Database.Create();
+            
             List<Permission> Permissions = new List<Permission>();
             Permissions.Add(new Permission { Code = 1, Name = "LOGIN" });
             Permissions.Add(new Permission { Code = 2, Name = "PRODUCT_CATEGORY_VIEW" });
@@ -91,7 +92,7 @@
             cust.Id = 1;
             cust.Name = "Walk-In";
             cust.Address = "-";
-            cust.Mobile = "0";
+            cust.Mobile = "0000000000";
             cust.Nic = "0";
             cust.LandLine = "0";
             context.Customers.AddOrUpdate(cust);

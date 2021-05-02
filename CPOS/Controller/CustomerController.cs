@@ -48,7 +48,33 @@ namespace CPOS.Controller
                 return null;
             }
         }
-
+        public Customer GetCustomerByMobile(string mobile)
+        {
+            try
+            {
+                if (PermissionController.CheckPermission(PermissionType.CUSTOMER_VIEW))
+                {
+                    var cust = context.Customers.FirstOrDefault(x => x.Mobile == mobile);
+                    if (cust == null)
+                    {
+                        throw new Exception("Customer Not Found!");
+                    }
+                    else
+                    {
+                        return cust;
+                    }
+                }
+                else
+                {
+                    throw new Exception("Access Denied!");
+                }
+            }
+            catch (Exception e)
+            {
+                Helper.MessageHelper.AlertError(e.Message);
+                return null;
+            }
+        }
         public void RegisterCustomer(Customer c)
         {
             try

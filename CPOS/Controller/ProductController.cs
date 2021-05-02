@@ -43,6 +43,11 @@ namespace CPOS.Controller
             return context.Products.FirstOrDefault(x => x.Id == id);
         }
 
+        public Product GetProductByBarcode(string data)
+        {
+            return context.Products.FirstOrDefault(x => x.BarcodeData == data);
+        }
+
         public void DeleteProduct(int id)
         {
             try

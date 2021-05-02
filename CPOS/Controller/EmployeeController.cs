@@ -20,7 +20,7 @@ namespace CPOS.Controller
 
         public EmployeeController()
         {
-            DatabaseController.GetConnection();
+           context = DatabaseController.GetConnection();
         }
 
         public void Register(Employee emp )

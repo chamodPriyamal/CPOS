@@ -147,6 +147,18 @@
     <Compile Include="Migrations\202105010705106_producttobatchtraverse.designer.cs">
       <DependentUpon>202105010705106_producttobatchtraverse.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105020609349_Add Sales Tables.cs" />
+    <Compile Include="Migrations\202105020609349_Add Sales Tables.designer.cs">
+      <DependentUpon>202105020609349_Add Sales Tables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105020643412_Add Sales Tables 1.cs" />
+    <Compile Include="Migrations\202105020643412_Add Sales Tables 1.designer.cs">
+      <DependentUpon>202105020643412_Add Sales Tables 1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105020649266_Add Sales Tables 2.cs" />
+    <Compile Include="Migrations\202105020649266_Add Sales Tables 2.designer.cs">
+      <DependentUpon>202105020649266_Add Sales Tables 2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model\Category.cs" />
     <Compile Include="Model\Customer.cs" />
     <Compile Include="Model\Log.cs" />
@@ -160,6 +172,8 @@
     <Compile Include="Model\POKO_ProductBatch.cs" />
     <Compile Include="Model\Product.cs" />
     <Compile Include="Model\ProductBatch.cs" />
+    <Compile Include="Model\Sale.cs" />
+    <Compile Include="Model\SaleDetail.cs" />
     <Compile Include="Model\Settings.cs" />
     <Compile Include="Model\User.cs" />
     <Compile Include="Program.cs" />
@@ -309,6 +323,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105010705106_producttobatchtraverse.resx">
       <DependentUpon>202105010705106_producttobatchtraverse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105020609349_Add Sales Tables.resx">
+      <DependentUpon>202105020609349_Add Sales Tables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105020643412_Add Sales Tables 1.resx">
+      <DependentUpon>202105020643412_Add Sales Tables 1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105020649266_Add Sales Tables 2.resx">
+      <DependentUpon>202105020649266_Add Sales Tables 2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
