@@ -14,5 +14,9 @@ namespace CPOS.Model
         [Required] public string BusinessAddress { get; set; }
         [Required] public string BusinessContact { get; set; }
         [Required] public string CostCode { get; set; }
+        //[Required] public string ODBC_Dsn { get; set; }
+        //[Required] public string ODBC_Host { get; set; }
+        //[Required] public string ODBC_Username { get; set; }
+        //[Required] public string Password { get; set; }
     }
 }

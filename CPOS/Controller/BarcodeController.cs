@@ -36,6 +36,7 @@ namespace CPOS.Controller
         public static void print_barcode_preview(int id)
         {
             TwoByOneBarcode rpt = new TwoByOneBarcode();
+            rpt.SetDatabaseLogon("cvpos","CVPOS@1010809");
             rpt.RecordSelectionFormula = "{Products.Id} = " + id;
             ReportViewer view = new ReportViewer(rpt);
             view.TopMost = true;

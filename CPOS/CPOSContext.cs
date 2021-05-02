@@ -10,7 +10,7 @@ namespace CPOS
 {
     public class CPOSContext : DbContext
     {
-        public CPOSContext() : base("name=DevelopmentDatabase") { }
+        public CPOSContext() : base("name=ProductionDatabase") { }
 
         public DbSet<Employee> Employees { get; set; }
         public DbSet<User> Users { get; set; }
