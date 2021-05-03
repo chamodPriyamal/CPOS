@@ -69,6 +69,15 @@ namespace CPOS.View
                             context.SaveChanges();
                             MessageHelper.AlertRegisterSuccess();
                         }
+
+                        if (MessageBox.Show("Do you want to print Labels", "Labels", MessageBoxButtons.YesNo) ==
+                            DialogResult.Yes)
+                        {
+                            BarcodeController.print_barcode(product.Id,int.Parse(batch.Stock.ToString()));
+                            BarcodeController.print_barcode_preview(product.Id);
+                        }
+
+                        Helper.ClearForm.ClearAllTextFields(this);
                     }
                 }
                 else
@@ -98,6 +107,20 @@ namespace CPOS.View
         private void button1_Click(object sender, EventArgs e)
         {
             new ProductCategory().Show();
+        }
+
+        private void txtCost_Leave(object sender, EventArgs e)
+        {
+            decimal price = CostCodeController.CodeToCost(txtCost.Text);
+            txtCash.Text = (price + price / 100 * 60).ToString();
+            txtMarkup.Text = (price + price / 100 * 60).ToString();
+            txtCredit.Text = (price + price / 100 * 60).ToString();
+        }
+
+        private void txtCash_TextChanged(object sender, EventArgs e)
+        {
+            txtCredit.Text = txtCash.Text;
+            txtMarkup.Text = txtCash.Text;
         }
     }
 }

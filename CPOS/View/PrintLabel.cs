@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CPOS.Controller;
+using CPOS.Model;
 
 namespace CPOS.View
 {
@@ -20,6 +21,7 @@ namespace CPOS.View
 
         private void btnNew_Click(object sender, EventArgs e)
         {
+            BarcodeController.print_barcode(int.Parse(txtId.Text),int.Parse(txtQty.Text));
             BarcodeController.print_barcode_preview(int.Parse(txtId.Text));
         }
 
@@ -29,13 +31,35 @@ namespace CPOS.View
             if (e.KeyChar == (char) Keys.Enter)
             {
                 int id = int.Parse(txtId.Text);
-                txtName.Text = DatabaseController.GetConnection().Products.FirstOrDefault(x => x.Id == id).Name.ToString();
+                Product p = DatabaseController.GetConnection().Products.FirstOrDefault(x => x.Id == id);
+                if (p != null)
+                {
+                    txtName.Text = p.Name;
+                    txtQty.Focus();
+                }
+                else
+                {
+                    txtName.Clear();
+                }
             }
         }
 
         private void btnClose_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char) Keys.Enter)
+            {
+                btnNew.PerformClick();
+            }
+        }
+
+        private void PrintLabel_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

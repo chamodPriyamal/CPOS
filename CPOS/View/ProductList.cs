@@ -73,9 +73,11 @@ namespace CPOS.View
 
         private void load_batches()
         {
-            int id = int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString());
-            var p = controller.GetProduct(id);
-            List<POKO_ProductBatch> batchList = new List<POKO_ProductBatch>();
+            try
+            {
+                int id = int.Parse(DGV.SelectedRows[0].Cells[0].Value.ToString());
+                var p = controller.GetProduct(id);
+                List<POKO_ProductBatch> batchList = new List<POKO_ProductBatch>();
 
                 foreach (var batch in p.Batches)
                 {
@@ -87,9 +89,43 @@ namespace CPOS.View
                     pokobatch.Cost = batch.Cost;
                     pokobatch.Stock = batch.Stock;
                     pokobatch.CostCode = CostCodeController.CostToCode(batch.Cost);
+                    pokobatch.Pid = batch.Product.Id;
+                    pokobatch.PName = batch.Product.Name;
                     batchList.Add(pokobatch);
                 }
-            DGV2.DataSource = batchList;
+                DGV2.DataSource = batchList;
+            }
+            catch (Exception e)
+            {
+                
+            }
+        }
+
+        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char) Keys.Enter)
+            {
+                if (txtName.Text == "")
+                {
+                    
+                }
+                else
+                {
+                    foreach (DataGridViewRow row in DGV.Rows)
+                    {
+                        if (row.Cells[0].Value.ToString() == txtName.Text)
+                        {
+                            row.Selected = true;
+                            DGV.FirstDisplayedScrollingRowIndex = row.Index;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void DGV_SelectionChanged(object sender, EventArgs e)
+        {
+            load_batches();
         }
     }
 }

@@ -192,6 +192,7 @@ namespace CPOS.View
             this.button7.TabIndex = 22;
             this.button7.Text = "Backup";
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // loggedUser1
             // 

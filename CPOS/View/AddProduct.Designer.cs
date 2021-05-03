@@ -162,7 +162,7 @@ namespace CPOS.View
             this.btnNew.Margin = new System.Windows.Forms.Padding(2);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(191, 61);
-            this.btnNew.TabIndex = 10;
+            this.btnNew.TabIndex = 4;
             this.btnNew.Text = "Save";
             this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -194,6 +194,7 @@ namespace CPOS.View
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(322, 102);
             this.txtDescription.TabIndex = 1;
+            this.txtDescription.Text = "-";
             // 
             // txtReOrder
             // 
@@ -202,6 +203,7 @@ namespace CPOS.View
             this.txtReOrder.Name = "txtReOrder";
             this.txtReOrder.Size = new System.Drawing.Size(322, 33);
             this.txtReOrder.TabIndex = 3;
+            this.txtReOrder.Text = "0";
             // 
             // txtBarcode
             // 
@@ -217,7 +219,8 @@ namespace CPOS.View
             this.txtCost.Margin = new System.Windows.Forms.Padding(2);
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(322, 33);
-            this.txtCost.TabIndex = 5;
+            this.txtCost.TabIndex = 2;
+            this.txtCost.Leave += new System.EventHandler(this.txtCost_Leave);
             // 
             // txtCash
             // 
@@ -225,7 +228,8 @@ namespace CPOS.View
             this.txtCash.Margin = new System.Windows.Forms.Padding(2);
             this.txtCash.Name = "txtCash";
             this.txtCash.Size = new System.Drawing.Size(322, 33);
-            this.txtCash.TabIndex = 6;
+            this.txtCash.TabIndex = 3;
+            this.txtCash.TextChanged += new System.EventHandler(this.txtCash_TextChanged);
             // 
             // txtCredit
             // 
@@ -237,11 +241,13 @@ namespace CPOS.View
             // 
             // cmbCategory
             // 
+            this.cmbCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbCategory.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cmbCategory.FormattingEnabled = true;
             this.cmbCategory.Location = new System.Drawing.Point(212, 302);
             this.cmbCategory.Name = "cmbCategory";
             this.cmbCategory.Size = new System.Drawing.Size(322, 35);
-            this.cmbCategory.TabIndex = 2;
+            this.cmbCategory.TabIndex = 1;
             // 
             // label9
             // 
@@ -290,7 +296,7 @@ namespace CPOS.View
             this.txtStock.Margin = new System.Windows.Forms.Padding(2);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(322, 33);
-            this.txtStock.TabIndex = 9;
+            this.txtStock.TabIndex = 3;
             // 
             // button1
             // 

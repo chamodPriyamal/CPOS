@@ -38,7 +38,7 @@ namespace CPOS.View
             txtCash.Text = batch.Cash.ToString();
             txtCredit.Text = batch.Credit.ToString();
             txtMarkup.Text = batch.Markup.ToString();
-            txtStock.Text = batch.Markup.ToString();
+            txtStock.Text = batch.Stock.ToString();
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -49,6 +49,7 @@ namespace CPOS.View
             batch.Markup = decimal.Parse(txtMarkup.Text);
             batch.Stock = decimal.Parse(txtStock.Text);
             controller.UpdateProduct();
+            this.Close();
         }
     }
 }

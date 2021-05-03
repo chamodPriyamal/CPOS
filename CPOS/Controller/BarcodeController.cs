@@ -22,6 +22,7 @@ namespace CPOS.Controller
 
         public static void print_barcode(int id, int count)
         {
+            
             int LabelCount = 0;
             if (count % 2 == 1)
             {
@@ -31,6 +32,10 @@ namespace CPOS.Controller
             {
                 LabelCount = count;
             }
+            TwoByOneBarcode rpt = new TwoByOneBarcode();
+            rpt.SetDatabaseLogon("cvpos", "CVPOS@1010809");
+            rpt.RecordSelectionFormula = "{Products.Id} = " + id;
+            rpt.PrintToPrinter(LabelCount / 2,false,1,1);
         }
 
         public static void print_barcode_preview(int id)

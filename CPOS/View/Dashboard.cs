@@ -41,5 +41,10 @@ namespace CPOS.View
         {
             new Pos().Show();
         }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            GC.Collect();
+        }
     }
 }

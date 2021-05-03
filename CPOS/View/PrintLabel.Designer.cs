@@ -95,6 +95,7 @@ namespace CPOS.View
             // 
             // txtName
             // 
+            this.txtName.Enabled = false;
             this.txtName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtName.ForeColor = System.Drawing.Color.Black;
             this.txtName.Location = new System.Drawing.Point(196, 188);
@@ -125,6 +126,7 @@ namespace CPOS.View
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(165, 33);
             this.txtQty.TabIndex = 25;
+            this.txtQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQty_KeyPress);
             // 
             // label4
             // 
@@ -178,6 +180,7 @@ namespace CPOS.View
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "PrintLabel";
             this.TopMost = true;
+            this.Load += new System.EventHandler(this.PrintLabel_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
