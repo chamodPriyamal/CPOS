@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CPOS.Helper;
 
 namespace CPOS.View
 {
@@ -58,6 +59,11 @@ namespace CPOS.View
             {
                 Helper.MessageHelper.AlertError(ex.Message);
             }
+        }
+
+        private void CustomerMenu_Load(object sender, EventArgs e)
+        {
+            ThemeHelper.ChangeFormBackgroundColor(this);
         }
     }
 }

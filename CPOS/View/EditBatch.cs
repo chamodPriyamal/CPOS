@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CPOS.Controller;
+using CPOS.Helper;
 using CPOS.Model;
 
 namespace CPOS.View
@@ -33,6 +34,7 @@ namespace CPOS.View
 
         private void EditBatch_Load(object sender, EventArgs e)
         {
+            ThemeHelper.ChangeFormBackgroundColor(this);
             batch = controller.GetBatchById(batchid);
             txtCost.Text = CostCodeController.CostToCode(batch.Cost);
             txtCash.Text = batch.Cash.ToString();

@@ -482,7 +482,6 @@ namespace CPOS.View
             this.txtDiscount.TabIndex = 2;
             this.txtDiscount.Text = "0";
             this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
-     
             // 
             // lblGrandTotal
             // 
@@ -577,7 +576,7 @@ namespace CPOS.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CPOS.Properties.Resources.smooth_dark_blue_background;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1396, 966);
             this.Controls.Add(this.btnNew);

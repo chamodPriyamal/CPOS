@@ -101,6 +101,7 @@ namespace CPOS.View
 
         private void Pos_Load(object sender, EventArgs e)
         {
+            ThemeHelper.ChangeFormBackgroundColor(this);
             reset();
         }
 
@@ -191,56 +192,56 @@ namespace CPOS.View
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            sale.Representive = context.Employees.FirstOrDefault();
-            sale.Customer = customer;
-            sale.Cashier = SessionController.emp;
-            try
+            if (MessageBox.Show("Are Sure Want to Continue!", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
             {
-                sale.Total = decimal.Parse(lblTotal.Text);
-                sale.Discount = decimal.Parse(txtDiscount.Text);
-                sale.GrandTotal = decimal.Parse(lblGrandTotal.Text);
-                sale.Balance = decimal.Parse(lblBalance.Text);
-                sale.Paid = decimal.Parse(txtPaid.Text);
-            }
-            catch (Exception exception)
-            {
+                sale.Representive = context.Employees.FirstOrDefault();
+                sale.Customer = customer;
+                sale.Cashier = SessionController.emp;
+                try
+                {
+                    sale.Total = decimal.Parse(lblTotal.Text);
+                    sale.Discount = decimal.Parse(txtDiscount.Text);
+                    sale.GrandTotal = decimal.Parse(lblGrandTotal.Text);
+                    sale.Balance = decimal.Parse(lblBalance.Text);
+                    sale.Paid = decimal.Parse(txtPaid.Text);
+                }
+                catch (Exception exception)
+                {
 
-            }
+                }
 
-            //First Deduct the stock
-            foreach (var sd in SaleDetails)
-            {                
-                var xib = context.ProductBatches.FirstOrDefault(x => x.Id == sd.ProductBatch.Id);
-                xib.Stock = xib.Stock - sd.Qty;
+                //First Deduct the stock
+                foreach (var sd in SaleDetails)
+                {
+                    var xib = context.ProductBatches.FirstOrDefault(x => x.Id == sd.ProductBatch.Id);
+                    xib.Stock = xib.Stock - sd.Qty;
+                    context.SaveChanges();
+                }
+
+
+                //Add Sale Entry
+                sale.SaleDetails = SaleDetails;
+                context.Sales.Add(sale);
                 context.SaveChanges();
             }
-            
-            
-            //Add Sale Entry
-            sale.SaleDetails = SaleDetails;
-            context.Sales.Add(sale);
-            context.SaveChanges();
 
-            reset();
-
-            /*if (MessageBox.Show("Do you want to print the receipt ?", "Print Bill", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Do you want to print the receipt ?", "Print Bill", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
 
-                Reports.Invoice receipt = new Reports.Invoice();
-                receipt.SetDatabaseLogon(Properties.Settings.Default.user, Properties.Settings.Default.pw);
-                receipt.RecordSelectionFormula = "{Sales.InvoiceNumber} = " + sale.InvoiceNumber;
+                Reports.PosInvoice receipt = new Reports.PosInvoice();
+                receipt.SetDatabaseLogon("cvpos", "CVPOS@1010809");
+                receipt.RecordSelectionFormula = "{Sales.Id} = " + sale.Id;
                 receipt.PrintToPrinter(1, false, 1, 1);
-                Reports.ReportViewer viewer = new ReportViewer(receipt);
+                ReportViewer viewer = new ReportViewer(receipt);
                 viewer.TopMost = true;
                 viewer.ShowDialog();
                 this.Close();
-                pos.newOrder();
+                reset();
             }
             else
             {
-                this.Close();
-                pos.newOrder();
-            }*/
+                reset();
+            }
         }
     }
 }

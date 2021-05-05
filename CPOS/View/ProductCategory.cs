@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CPOS.Helper;
 using Microsoft.VisualBasic;
 
 namespace CPOS.View
@@ -28,6 +29,7 @@ namespace CPOS.View
 
         private void ProductCategory_Load(object sender, EventArgs e)
         {
+            ThemeHelper.ChangeFormBackgroundColor(this);
             DGV.AutoGenerateColumns = false;
             DGV.DataSource = controller.GetCategoryListForDataGrid();
         }

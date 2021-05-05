@@ -16,14 +16,14 @@ namespace CPOS.Reports {
     using CrystalDecisions.CrystalReports.Engine;
     
     
-    public class Invoice : ReportClass {
+    public class PosInvoice : ReportClass {
         
-        public Invoice() {
+        public PosInvoice() {
         }
         
         public override string ResourceName {
             get {
-                return "Invoice.rpt";
+                return "PosInvoice.rpt";
             }
             set {
                 // Do nothing
@@ -41,7 +41,7 @@ namespace CPOS.Reports {
         
         public override string FullResourceName {
             get {
-                return "CPOS.Reports.Invoice.rpt";
+                return "CPOS.Reports.PosInvoice.rpt";
             }
             set {
                 // Do nothing
@@ -90,9 +90,9 @@ namespace CPOS.Reports {
     }
     
     [System.Drawing.ToolboxBitmapAttribute(typeof(CrystalDecisions.Shared.ExportOptions), "report.bmp")]
-    public class CachedInvoice : Component, ICachedReport {
+    public class CachedPosInvoice : Component, ICachedReport {
         
-        public CachedInvoice() {
+        public CachedPosInvoice() {
         }
         
         [Browsable(false)]
@@ -129,7 +129,7 @@ namespace CPOS.Reports {
         }
         
         public virtual CrystalDecisions.CrystalReports.Engine.ReportDocument CreateReport() {
-            Invoice rpt = new Invoice();
+            PosInvoice rpt = new PosInvoice();
             rpt.Site = this.Site;
             return rpt;
         }

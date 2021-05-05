@@ -54,8 +54,6 @@ namespace CPOS.View
             this.editBatch = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.DGV2 = new System.Windows.Forms.DataGridView();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.loggedUser1 = new CPOS.LoggedUser();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -64,6 +62,8 @@ namespace CPOS.View
             this.clmnStk = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnpname = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clmnpid = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.loggedUser1 = new CPOS.LoggedUser();
             ((System.ComponentModel.ISupportInitialize)(this.DGV)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DGV2)).BeginInit();
             this.SuspendLayout();
@@ -365,33 +365,6 @@ namespace CPOS.View
             this.DGV2.Size = new System.Drawing.Size(1233, 164);
             this.DGV2.TabIndex = 53;
             // 
-            // btnRefresh
-            // 
-            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRefresh.ForeColor = System.Drawing.Color.White;
-            this.btnRefresh.Image = global::CPOS.Properties.Resources.refresh;
-            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRefresh.Location = new System.Drawing.Point(82, 219);
-            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(240, 46);
-            this.btnRefresh.TabIndex = 54;
-            this.btnRefresh.Text = "Refresh All";
-            this.btnRefresh.UseVisualStyleBackColor = false;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // loggedUser1
-            // 
-            this.loggedUser1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.loggedUser1.BackColor = System.Drawing.Color.Transparent;
-            this.loggedUser1.Location = new System.Drawing.Point(1041, 97);
-            this.loggedUser1.Margin = new System.Windows.Forms.Padding(2);
-            this.loggedUser1.Name = "loggedUser1";
-            this.loggedUser1.Size = new System.Drawing.Size(310, 149);
-            this.loggedUser1.TabIndex = 27;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -471,11 +444,38 @@ namespace CPOS.View
             this.clmnpid.ReadOnly = true;
             this.clmnpid.Width = 125;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.BackColor = System.Drawing.Color.Transparent;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefresh.ForeColor = System.Drawing.Color.White;
+            this.btnRefresh.Image = global::CPOS.Properties.Resources.refresh;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRefresh.Location = new System.Drawing.Point(82, 219);
+            this.btnRefresh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(240, 46);
+            this.btnRefresh.TabIndex = 54;
+            this.btnRefresh.Text = "Refresh All";
+            this.btnRefresh.UseVisualStyleBackColor = false;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
+            // loggedUser1
+            // 
+            this.loggedUser1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.loggedUser1.BackColor = System.Drawing.Color.Transparent;
+            this.loggedUser1.Location = new System.Drawing.Point(1041, 97);
+            this.loggedUser1.Margin = new System.Windows.Forms.Padding(2);
+            this.loggedUser1.Name = "loggedUser1";
+            this.loggedUser1.Size = new System.Drawing.Size(310, 149);
+            this.loggedUser1.TabIndex = 27;
+            // 
             // ProductList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CPOS.Properties.Resources.smooth_dark_blue_background;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1396, 1001);
             this.Controls.Add(this.btnRefresh);

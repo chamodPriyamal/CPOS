@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CPOS.Controller;
+using CPOS.Helper;
 using CPOS.Model;
 
 namespace CPOS.View
@@ -40,6 +41,7 @@ namespace CPOS.View
 
         private void ViewCustomer_Load(object sender, EventArgs e)
         {
+            ThemeHelper.ChangeFormBackgroundColor(this);
             DGV.AutoGenerateColumns = false;
             DGV.DataSource = controller.GetCustomerListForDataGrid();
         }

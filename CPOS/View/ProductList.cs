@@ -24,6 +24,7 @@ namespace CPOS.View
 
         private void ProductList_Load(object sender, EventArgs e)
         {
+            ThemeHelper.ChangeFormBackgroundColor(this);
             DGV.AutoGenerateColumns = false;
             DGV2.AutoGenerateColumns = false;
             DGV.DataSource = controller.GetProductBindingList();

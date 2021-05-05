@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CPOS.Controller;
+using CPOS.Helper;
 using CPOS.Model;
 
 namespace CPOS.View
@@ -59,7 +60,7 @@ namespace CPOS.View
 
         private void PrintLabel_Load(object sender, EventArgs e)
         {
-
+            ThemeHelper.ChangeFormBackgroundColor(this);
         }
     }
 }

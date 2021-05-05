@@ -27,7 +27,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <InstallUrl>http://192.168.1.110/cpos-textile/</InstallUrl>
-    <ApplicationRevision>14</ApplicationRevision>
+    <ApplicationRevision>18</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>true</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -117,6 +117,7 @@
     <Compile Include="Controller\PosController.cs" />
     <Compile Include="Controller\ProductController.cs" />
     <Compile Include="Controller\SettingsController.cs" />
+    <Compile Include="Helper\ThemeHelper.cs" />
     <Compile Include="Migrations\202104201649412_New.cs" />
     <Compile Include="Migrations\202104201649412_New.designer.cs">
       <DependentUpon>202104201649412_New.cs</DependentUpon>
@@ -219,10 +220,10 @@
     <Compile Include="LoggedUser.Designer.cs">
       <DependentUpon>LoggedUser.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Invoice.cs">
+    <Compile Include="Reports\PosInvoice.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Invoice.rpt</DependentUpon>
+      <DependentUpon>PosInvoice.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\TwoByOneBarcode.cs">
@@ -377,9 +378,9 @@
     <EmbeddedResource Include="LoggedUser.resx">
       <DependentUpon>LoggedUser.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Invoice.rpt">
+    <EmbeddedResource Include="Reports\PosInvoice.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Invoice.cs</LastGenOutput>
+      <LastGenOutput>PosInvoice.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\TwoByOneBarcode.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -441,9 +442,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\close.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\profile.png" />
@@ -508,7 +506,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

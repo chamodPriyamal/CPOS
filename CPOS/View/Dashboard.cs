@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CPOS.Helper;
 
 namespace CPOS.View
 {
@@ -24,7 +25,7 @@ namespace CPOS.View
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-            
+            ThemeHelper.ChangeFormBackgroundColor(this);
         }
 
         private void btnProducts_Click(object sender, EventArgs e)

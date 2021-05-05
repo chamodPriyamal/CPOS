@@ -98,6 +98,7 @@ namespace CPOS.View
 
         private void AddProduct_Load(object sender, EventArgs e)
         {
+            ThemeHelper.ChangeFormBackgroundColor(this);
             cmbCategory.DataSource = categoryController.GetCategoryListForComboBox();
             cmbCategory.ValueMember = "Id";
             cmbCategory.DisplayMember = "Name";

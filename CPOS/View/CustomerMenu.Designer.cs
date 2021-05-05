@@ -116,7 +116,7 @@ namespace CPOS.View
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = global::CPOS.Properties.Resources.smooth_dark_blue_background;
+            this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1396, 821);
             this.Controls.Add(this.btnClose);
@@ -131,6 +131,7 @@ namespace CPOS.View
             this.Text = "CustomerMenu";
             this.TopMost = true;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.CustomerMenu_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
