@@ -90,7 +90,7 @@ namespace CPOS.View
             // 
             this.loggedUser1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.loggedUser1.BackColor = System.Drawing.Color.Transparent;
-            this.loggedUser1.Location = new System.Drawing.Point(944, 97);
+            this.loggedUser1.Location = new System.Drawing.Point(828, 97);
             this.loggedUser1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loggedUser1.Name = "loggedUser1";
             this.loggedUser1.Size = new System.Drawing.Size(413, 183);
@@ -104,7 +104,7 @@ namespace CPOS.View
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(1336, 13);
+            this.btnClose.Location = new System.Drawing.Point(1220, 13);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(47, 43);
@@ -118,7 +118,7 @@ namespace CPOS.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1396, 821);
+            this.ClientSize = new System.Drawing.Size(1280, 768);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnCustList);
             this.Controls.Add(this.btnAddCust);

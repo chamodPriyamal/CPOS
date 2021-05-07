@@ -96,7 +96,7 @@ namespace CPOS.View
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(1336, 13);
+            this.btnClose.Location = new System.Drawing.Point(1220, 13);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(47, 43);
@@ -136,7 +136,7 @@ namespace CPOS.View
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV.DefaultCellStyle = dataGridViewCellStyle4;
-            this.DGV.Location = new System.Drawing.Point(82, 425);
+            this.DGV.Location = new System.Drawing.Point(82, 374);
             this.DGV.Margin = new System.Windows.Forms.Padding(4);
             this.DGV.MultiSelect = false;
             this.DGV.Name = "DGV";
@@ -144,7 +144,7 @@ namespace CPOS.View
             this.DGV.RowHeadersVisible = false;
             this.DGV.RowHeadersWidth = 51;
             this.DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV.Size = new System.Drawing.Size(1233, 235);
+            this.DGV.Size = new System.Drawing.Size(861, 323);
             this.DGV.TabIndex = 54;
             this.DGV.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DGV_RowsAdded);
             this.DGV.UserDeletingRow += new System.Windows.Forms.DataGridViewRowCancelEventHandler(this.DGV_UserDeletingRow);
@@ -278,7 +278,7 @@ namespace CPOS.View
             this.lblProductName.BackColor = System.Drawing.Color.Transparent;
             this.lblProductName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductName.ForeColor = System.Drawing.Color.White;
-            this.lblProductName.Location = new System.Drawing.Point(1050, 316);
+            this.lblProductName.Location = new System.Drawing.Point(795, 306);
             this.lblProductName.Name = "lblProductName";
             this.lblProductName.Size = new System.Drawing.Size(148, 27);
             this.lblProductName.TabIndex = 62;
@@ -288,7 +288,7 @@ namespace CPOS.View
             // 
             this.txtBarcodeData.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtBarcodeData.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBarcodeData.Location = new System.Drawing.Point(1055, 271);
+            this.txtBarcodeData.Location = new System.Drawing.Point(799, 271);
             this.txtBarcodeData.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtBarcodeData.Name = "txtBarcodeData";
             this.txtBarcodeData.Size = new System.Drawing.Size(95, 33);
@@ -302,7 +302,7 @@ namespace CPOS.View
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(882, 316);
+            this.label5.Location = new System.Drawing.Point(627, 306);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(167, 27);
             this.label5.TabIndex = 60;
@@ -315,7 +315,7 @@ namespace CPOS.View
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(947, 274);
+            this.label6.Location = new System.Drawing.Point(691, 274);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(102, 27);
             this.label6.TabIndex = 59;
@@ -325,7 +325,7 @@ namespace CPOS.View
             // 
             this.txtQty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtQty.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQty.Location = new System.Drawing.Point(1055, 355);
+            this.txtQty.Location = new System.Drawing.Point(800, 335);
             this.txtQty.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQty.Name = "txtQty";
             this.txtQty.Size = new System.Drawing.Size(89, 33);
@@ -339,7 +339,7 @@ namespace CPOS.View
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(987, 358);
+            this.label7.Location = new System.Drawing.Point(732, 338);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 27);
             this.label7.TabIndex = 63;
@@ -347,11 +347,12 @@ namespace CPOS.View
             // 
             // lblTotalQty
             // 
+            this.lblTotalQty.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblTotalQty.AutoSize = true;
             this.lblTotalQty.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalQty.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotalQty.ForeColor = System.Drawing.Color.White;
-            this.lblTotalQty.Location = new System.Drawing.Point(224, 664);
+            this.lblTotalQty.Location = new System.Drawing.Point(1095, 372);
             this.lblTotalQty.Name = "lblTotalQty";
             this.lblTotalQty.Size = new System.Drawing.Size(185, 27);
             this.lblTotalQty.TabIndex = 66;
@@ -359,11 +360,12 @@ namespace CPOS.View
             // 
             // label8
             // 
+            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label8.AutoSize = true;
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(84, 664);
+            this.label8.Location = new System.Drawing.Point(955, 372);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(134, 27);
             this.label8.TabIndex = 65;
@@ -376,7 +378,7 @@ namespace CPOS.View
             this.lblTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTotal.ForeColor = System.Drawing.Color.White;
-            this.lblTotal.Location = new System.Drawing.Point(1130, 664);
+            this.lblTotal.Location = new System.Drawing.Point(1089, 412);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(89, 27);
             this.lblTotal.TabIndex = 68;
@@ -389,7 +391,7 @@ namespace CPOS.View
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(1051, 664);
+            this.label11.Location = new System.Drawing.Point(1018, 414);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(70, 27);
             this.label11.TabIndex = 67;
@@ -402,7 +404,7 @@ namespace CPOS.View
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(1015, 696);
+            this.label12.Location = new System.Drawing.Point(982, 455);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(106, 27);
             this.label12.TabIndex = 69;
@@ -415,7 +417,7 @@ namespace CPOS.View
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(986, 739);
+            this.label13.Location = new System.Drawing.Point(950, 501);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(135, 27);
             this.label13.TabIndex = 70;
@@ -428,7 +430,7 @@ namespace CPOS.View
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(1057, 778);
+            this.label14.Location = new System.Drawing.Point(1018, 544);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(64, 27);
             this.label14.TabIndex = 71;
@@ -441,7 +443,7 @@ namespace CPOS.View
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(1025, 819);
+            this.label15.Location = new System.Drawing.Point(982, 588);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(96, 27);
             this.label15.TabIndex = 72;
@@ -449,11 +451,12 @@ namespace CPOS.View
             // 
             // label16
             // 
+            this.label16.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.BackColor = System.Drawing.Color.Transparent;
             this.label16.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(115, 739);
+            this.label16.Location = new System.Drawing.Point(993, 629);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(85, 27);
             this.label16.TabIndex = 73;
@@ -461,11 +464,12 @@ namespace CPOS.View
             // 
             // label17
             // 
+            this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(77, 778);
+            this.label17.Location = new System.Drawing.Point(955, 670);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(123, 27);
             this.label17.TabIndex = 74;
@@ -475,7 +479,7 @@ namespace CPOS.View
             // 
             this.txtDiscount.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtDiscount.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscount.Location = new System.Drawing.Point(1135, 693);
+            this.txtDiscount.Location = new System.Drawing.Point(1094, 452);
             this.txtDiscount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDiscount.Name = "txtDiscount";
             this.txtDiscount.Size = new System.Drawing.Size(123, 33);
@@ -490,7 +494,7 @@ namespace CPOS.View
             this.lblGrandTotal.BackColor = System.Drawing.Color.Transparent;
             this.lblGrandTotal.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblGrandTotal.ForeColor = System.Drawing.Color.White;
-            this.lblGrandTotal.Location = new System.Drawing.Point(1130, 739);
+            this.lblGrandTotal.Location = new System.Drawing.Point(1095, 501);
             this.lblGrandTotal.Name = "lblGrandTotal";
             this.lblGrandTotal.Size = new System.Drawing.Size(89, 27);
             this.lblGrandTotal.TabIndex = 76;
@@ -504,7 +508,7 @@ namespace CPOS.View
             this.lblBalance.BackColor = System.Drawing.Color.Transparent;
             this.lblBalance.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBalance.ForeColor = System.Drawing.Color.White;
-            this.lblBalance.Location = new System.Drawing.Point(1130, 819);
+            this.lblBalance.Location = new System.Drawing.Point(1089, 588);
             this.lblBalance.Name = "lblBalance";
             this.lblBalance.Size = new System.Drawing.Size(89, 27);
             this.lblBalance.TabIndex = 77;
@@ -515,7 +519,7 @@ namespace CPOS.View
             // 
             this.txtPaid.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPaid.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPaid.Location = new System.Drawing.Point(1135, 775);
+            this.txtPaid.Location = new System.Drawing.Point(1094, 541);
             this.txtPaid.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPaid.Name = "txtPaid";
             this.txtPaid.Size = new System.Drawing.Size(123, 33);
@@ -525,11 +529,12 @@ namespace CPOS.View
             // 
             // label20
             // 
+            this.label20.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label20.AutoSize = true;
             this.label20.BackColor = System.Drawing.Color.Transparent;
             this.label20.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.Color.White;
-            this.label20.Location = new System.Drawing.Point(206, 778);
+            this.label20.Location = new System.Drawing.Point(1089, 670);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(188, 27);
             this.label20.TabIndex = 79;
@@ -537,8 +542,9 @@ namespace CPOS.View
             // 
             // textBox3
             // 
+            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox3.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(211, 736);
+            this.textBox3.Location = new System.Drawing.Point(1094, 626);
             this.textBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(114, 33);
@@ -546,14 +552,14 @@ namespace CPOS.View
             // 
             // btnNew
             // 
-            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnNew.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNew.BackColor = System.Drawing.Color.Transparent;
             this.btnNew.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnNew.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.Image = global::CPOS.Properties.Resources.printer;
             this.btnNew.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNew.Location = new System.Drawing.Point(1055, 874);
+            this.btnNew.Location = new System.Drawing.Point(1043, 706);
             this.btnNew.Margin = new System.Windows.Forms.Padding(2);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(191, 51);
@@ -566,7 +572,7 @@ namespace CPOS.View
             // 
             this.loggedUser1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.loggedUser1.BackColor = System.Drawing.Color.Transparent;
-            this.loggedUser1.Location = new System.Drawing.Point(944, 97);
+            this.loggedUser1.Location = new System.Drawing.Point(828, 97);
             this.loggedUser1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loggedUser1.Name = "loggedUser1";
             this.loggedUser1.Size = new System.Drawing.Size(406, 149);
@@ -578,7 +584,7 @@ namespace CPOS.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1396, 966);
+            this.ClientSize = new System.Drawing.Size(1280, 768);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.textBox3);
             this.Controls.Add(this.label20);

@@ -73,11 +73,23 @@ namespace CPOS.View
                         if (MessageBox.Show("Do you want to print Labels", "Labels", MessageBoxButtons.YesNo) ==
                             DialogResult.Yes)
                         {
-                            BarcodeController.print_barcode(product.Id,int.Parse(batch.Stock.ToString()));
-                            BarcodeController.print_barcode_preview(product.Id);
+                            if (MessageBox.Show("Do you want to Double the Labels", "Labels", MessageBoxButtons.YesNo) ==
+                                DialogResult.Yes)
+                            {
+                                BarcodeController.print_barcode(product.Id, int.Parse((batch.Stock * 2) .ToString()));
+                                BarcodeController.print_barcode_preview(product.Id);
+                            }
+                            else
+                            {
+                                BarcodeController.print_barcode(product.Id, int.Parse(batch.Stock.ToString()));
+                                BarcodeController.print_barcode_preview(product.Id);
+                            }
                         }
 
                         Helper.ClearForm.ClearAllTextFields(this);
+                        txtDescription.Text = "-";
+                        txtReOrder.Text = "0";
+                        txtName.Focus();
                     }
                 }
                 else

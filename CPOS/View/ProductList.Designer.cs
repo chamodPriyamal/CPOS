@@ -76,7 +76,7 @@ namespace CPOS.View
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnClose.FlatAppearance.BorderSize = 0;
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Location = new System.Drawing.Point(1336, 13);
+            this.btnClose.Location = new System.Drawing.Point(1220, 13);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(47, 43);
@@ -134,7 +134,7 @@ namespace CPOS.View
             this.DGV.RowHeadersVisible = false;
             this.DGV.RowHeadersWidth = 51;
             this.DGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV.Size = new System.Drawing.Size(1233, 387);
+            this.DGV.Size = new System.Drawing.Size(1117, 220);
             this.DGV.TabIndex = 28;
             this.DGV.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGV_CellClick);
             this.DGV.SelectionChanged += new System.EventHandler(this.DGV_SelectionChanged);
@@ -198,7 +198,7 @@ namespace CPOS.View
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(860, 236);
+            this.label9.Location = new System.Drawing.Point(744, 236);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 27);
             this.label9.TabIndex = 45;
@@ -208,7 +208,7 @@ namespace CPOS.View
             // 
             this.txtName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.txtName.Font = new System.Drawing.Font("Microsoft YaHei UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtName.Location = new System.Drawing.Point(972, 232);
+            this.txtName.Location = new System.Drawing.Point(856, 232);
             this.txtName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtName.Name = "txtName";
             this.txtName.Size = new System.Drawing.Size(343, 33);
@@ -224,7 +224,7 @@ namespace CPOS.View
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.Image = global::CPOS.Properties.Resources.delete;
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDelete.Location = new System.Drawing.Point(1075, 664);
+            this.btnDelete.Location = new System.Drawing.Point(959, 497);
             this.btnDelete.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(240, 46);
@@ -242,7 +242,7 @@ namespace CPOS.View
             this.btnEdit.ForeColor = System.Drawing.Color.White;
             this.btnEdit.Image = global::CPOS.Properties.Resources.edit;
             this.btnEdit.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEdit.Location = new System.Drawing.Point(829, 664);
+            this.btnEdit.Location = new System.Drawing.Point(713, 497);
             this.btnEdit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnEdit.Name = "btnEdit";
             this.btnEdit.Size = new System.Drawing.Size(240, 46);
@@ -259,7 +259,7 @@ namespace CPOS.View
             this.btnNewProduct.ForeColor = System.Drawing.Color.White;
             this.btnNewProduct.Image = global::CPOS.Properties.Resources._new;
             this.btnNewProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNewProduct.Location = new System.Drawing.Point(583, 664);
+            this.btnNewProduct.Location = new System.Drawing.Point(467, 497);
             this.btnNewProduct.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnNewProduct.Name = "btnNewProduct";
             this.btnNewProduct.Size = new System.Drawing.Size(240, 46);
@@ -277,7 +277,7 @@ namespace CPOS.View
             this.btnDeleteBatch.ForeColor = System.Drawing.Color.White;
             this.btnDeleteBatch.Image = global::CPOS.Properties.Resources.delete;
             this.btnDeleteBatch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnDeleteBatch.Location = new System.Drawing.Point(1075, 910);
+            this.btnDeleteBatch.Location = new System.Drawing.Point(959, 684);
             this.btnDeleteBatch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnDeleteBatch.Name = "btnDeleteBatch";
             this.btnDeleteBatch.Size = new System.Drawing.Size(240, 46);
@@ -295,7 +295,7 @@ namespace CPOS.View
             this.editBatch.ForeColor = System.Drawing.Color.White;
             this.editBatch.Image = global::CPOS.Properties.Resources.edit;
             this.editBatch.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.editBatch.Location = new System.Drawing.Point(829, 910);
+            this.editBatch.Location = new System.Drawing.Point(713, 684);
             this.editBatch.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.editBatch.Name = "editBatch";
             this.editBatch.Size = new System.Drawing.Size(240, 46);
@@ -313,7 +313,7 @@ namespace CPOS.View
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = global::CPOS.Properties.Resources._new;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(583, 910);
+            this.button3.Location = new System.Drawing.Point(467, 684);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(240, 46);
@@ -354,7 +354,7 @@ namespace CPOS.View
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.DGV2.DefaultCellStyle = dataGridViewCellStyle8;
-            this.DGV2.Location = new System.Drawing.Point(82, 740);
+            this.DGV2.Location = new System.Drawing.Point(82, 549);
             this.DGV2.Margin = new System.Windows.Forms.Padding(4);
             this.DGV2.MultiSelect = false;
             this.DGV2.Name = "DGV2";
@@ -362,7 +362,7 @@ namespace CPOS.View
             this.DGV2.RowHeadersVisible = false;
             this.DGV2.RowHeadersWidth = 51;
             this.DGV2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DGV2.Size = new System.Drawing.Size(1233, 164);
+            this.DGV2.Size = new System.Drawing.Size(1117, 129);
             this.DGV2.TabIndex = 53;
             // 
             // dataGridViewTextBoxColumn1
@@ -465,7 +465,7 @@ namespace CPOS.View
             // 
             this.loggedUser1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.loggedUser1.BackColor = System.Drawing.Color.Transparent;
-            this.loggedUser1.Location = new System.Drawing.Point(1041, 97);
+            this.loggedUser1.Location = new System.Drawing.Point(925, 97);
             this.loggedUser1.Margin = new System.Windows.Forms.Padding(2);
             this.loggedUser1.Name = "loggedUser1";
             this.loggedUser1.Size = new System.Drawing.Size(310, 149);
@@ -477,7 +477,7 @@ namespace CPOS.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1396, 1001);
+            this.ClientSize = new System.Drawing.Size(1280, 768);
             this.Controls.Add(this.btnRefresh);
             this.Controls.Add(this.DGV2);
             this.Controls.Add(this.btnDeleteBatch);
