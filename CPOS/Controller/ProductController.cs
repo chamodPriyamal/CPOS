@@ -9,8 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CPOS.Helper;
 using CPOS.Model;
-using NetBarcode;
-using Type = NetBarcode.Type;
 
 namespace CPOS.Controller
 {

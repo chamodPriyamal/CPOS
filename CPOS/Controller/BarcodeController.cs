@@ -5,8 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using CPOS.Reports;
 using CPOS.View;
-using NetBarcode;
-using Type = NetBarcode.Type;
+using BarcodeLib;
 
 namespace CPOS.Controller
 {
@@ -16,8 +15,9 @@ namespace CPOS.Controller
 
         public static byte[] GetBarcodeBytes(string data)
         {
-            barcode = new Barcode(data, Type.Code128);
-            return barcode.GetByteArray();
+            BarcodeLib.Barcode b = new BarcodeLib.Barcode();
+            b.Encode(TYPE.CODE128, data);
+            return b.GetImageData(SaveTypes.PNG);
         }
 
         public static void print_barcode(int id, int count)

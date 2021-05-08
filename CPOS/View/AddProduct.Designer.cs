@@ -162,7 +162,7 @@ namespace CPOS.View
             this.btnNew.Margin = new System.Windows.Forms.Padding(2);
             this.btnNew.Name = "btnNew";
             this.btnNew.Size = new System.Drawing.Size(191, 61);
-            this.btnNew.TabIndex = 4;
+            this.btnNew.TabIndex = 7;
             this.btnNew.Text = "Save";
             this.btnNew.UseVisualStyleBackColor = false;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -237,7 +237,7 @@ namespace CPOS.View
             this.txtCredit.Margin = new System.Windows.Forms.Padding(2);
             this.txtCredit.Name = "txtCredit";
             this.txtCredit.Size = new System.Drawing.Size(322, 33);
-            this.txtCredit.TabIndex = 7;
+            this.txtCredit.TabIndex = 4;
             // 
             // cmbCategory
             // 
@@ -266,7 +266,7 @@ namespace CPOS.View
             this.txtMarkup.Margin = new System.Windows.Forms.Padding(2);
             this.txtMarkup.Name = "txtMarkup";
             this.txtMarkup.Size = new System.Drawing.Size(322, 33);
-            this.txtMarkup.TabIndex = 8;
+            this.txtMarkup.TabIndex = 5;
             // 
             // label10
             // 
@@ -296,7 +296,7 @@ namespace CPOS.View
             this.txtStock.Margin = new System.Windows.Forms.Padding(2);
             this.txtStock.Name = "txtStock";
             this.txtStock.Size = new System.Drawing.Size(322, 33);
-            this.txtStock.TabIndex = 3;
+            this.txtStock.TabIndex = 6;
             // 
             // button1
             // 

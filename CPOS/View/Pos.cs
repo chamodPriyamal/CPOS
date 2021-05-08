@@ -33,55 +33,6 @@ namespace CPOS.View
             this.Close();
         }
 
-        private void txtBarcodeData_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                if (saleDetail != null)
-                {
-                    saleDetail = new SaleDetail();
-                }
-                if (txtBarcodeData.Text != "")
-                {
-                   
-                    Product p = context.Products.FirstOrDefault(x => x.BarcodeData == txtBarcodeData.Text);
-
-                    if (p != null)
-                    {
-                        lblProductName.Text = p.Name;
-                        saleDetail.Product = p;
-                        saleDetail.ProductBatch = p.Batches.FirstOrDefault();
-                        txtQty.Focus();
-                    }
-                }
-            }
-        }
-
-        private void txtName_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            try
-            {
-                if (e.KeyChar == (char) Keys.Enter)
-                {
-                    if (txtName.Text == "" || txtName.Text == "0" || txtName.Text.Contains(" "))
-                    {
-                        txtName.Text = "0000000000";
-                    }
-
-                    if ((customer = context.Customers.FirstOrDefault(x=>x.Mobile == txtName.Text)) != null)
-                    {
-                        lblName.Text = customer.Name;
-                        txtBarcodeData.Focus();
-                    }
-                }
-            }
-                    
-            catch (Exception exception)
-            {
-               MessageHelper.AlertError(exception.Message);
-            }
-        }
-
         private void reset()
         {
             customer = new Customer();
@@ -89,14 +40,14 @@ namespace CPOS.View
             SaleDetails = new List<SaleDetail>();
             Rep = new Employee();
             sale = new Sale();
-            lblTotal.Text = "0000.00";
-            lblGrandTotal.Text = "0000.00";
-            lblBalance.Text = "0000.00";
+            txtTotal.Text = "0000.00";
+            txtGrandTotal.Text = "0000.00";
+            txtBalance.Text = "0000.00";
             txtDiscount.Text = "0";
             txtPaid.Text = "0";
             DGV.Rows.Clear();
-            lblTotal.Text = "Add to Cart";
-            txtName.Focus();
+            txtTotal.Text = "0";
+            txtCustId.Focus();
         }
 
         private void Pos_Load(object sender, EventArgs e)
@@ -105,45 +56,8 @@ namespace CPOS.View
             reset();
         }
 
-        private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                try
-                {
-                    if (txtQty.Text != "" && txtQty.Text != @"0" && decimal.Parse(txtQty.Text) <= saleDetail.ProductBatch.Stock)
-                    {
-                        saleDetail.Qty = decimal.Parse(txtQty.Text);
-                        saleDetail.Total = saleDetail.ProductBatch.Cash * saleDetail.Qty;
 
-                        DGV.Rows.Add(saleDetail.Product.Id, saleDetail.Product.Name, saleDetail.Product.BarcodeData, saleDetail.ProductBatch.Stock, CostCodeController.CostToCode(saleDetail.ProductBatch.Cost),
-                            saleDetail.ProductBatch.Cash, saleDetail.Qty, saleDetail.Total);
-
-                        SaleDetails.Add(saleDetail);
-
-                    }
-                    lblProductName.Text = "Scan!";
-                    txtBarcodeData.Clear();
-                    txtQty.Clear();
-                    txtBarcodeData.Focus();
-                }
-                catch (Exception exception)
-                {
-
-                }
-            }
-        }
-
-        private void DGV_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
-        {
-           calculate_stats();
-        }
-
-        private void DGV_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
-        {
-            calculate_stats();
-            SaleDetails.RemoveAt(e.Row.Index);
-        }
+       
 
         private void calculate_stats()
         {
@@ -166,10 +80,10 @@ namespace CPOS.View
                 paid = decimal.Parse(txtPaid.Text);
                 balance = paid - grandtotal;
 
-                lblTotalQty.Text = totalqty.ToString();
-                lblTotal.Text = total.ToString();
-                lblGrandTotal.Text = grandtotal.ToString();
-                lblBalance.Text = balance.ToString();
+                txtTotalQty.Text = totalqty.ToString();
+                txtTotal.Text = total.ToString();
+                txtGrandTotal.Text = grandtotal.ToString();
+                txtBalance.Text = balance.ToString();
 
             }
             catch (Exception e)
@@ -199,10 +113,10 @@ namespace CPOS.View
                 sale.Cashier = SessionController.emp;
                 try
                 {
-                    sale.Total = decimal.Parse(lblTotal.Text);
+                    sale.Total = decimal.Parse(txtTotal.Text);
                     sale.Discount = decimal.Parse(txtDiscount.Text);
-                    sale.GrandTotal = decimal.Parse(lblGrandTotal.Text);
-                    sale.Balance = decimal.Parse(lblBalance.Text);
+                    sale.GrandTotal = decimal.Parse(txtGrandTotal.Text);
+                    sale.Balance = decimal.Parse(txtBalance.Text);
                     sale.Paid = decimal.Parse(txtPaid.Text);
                 }
                 catch (Exception exception)
@@ -235,13 +149,119 @@ namespace CPOS.View
                 ReportViewer viewer = new ReportViewer(receipt);
                 viewer.TopMost = true;
                 viewer.ShowDialog();
-                this.Close();
                 reset();
             }
             else
             {
                 reset();
             }
+        }
+
+        private void txtCustId_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            try
+            {
+                if (e.KeyChar == (char)Keys.Enter)
+                {
+                    if (txtCustId.Text == "" || txtCustId.Text == "0" || txtCustId.Text.Contains(" "))
+                    {
+                        txtCustId.Text = "0000000000";
+                    }
+
+                    if ((customer = context.Customers.FirstOrDefault(x => x.Mobile == txtCustId.Text)) != null)
+                    {
+                        txtCustId.Text = customer.Name;
+                        txtCustId.ReadOnly = true;
+                        txtBarcodeData.Focus();
+                    }
+                }
+                else if (e.KeyChar == (char) Keys.Escape)
+                {
+                    txtCustId.ReadOnly = false;
+                    txtCustId.Text = "";
+                }
+            }
+
+            catch (Exception exception)
+            {
+                MessageHelper.AlertError(exception.Message);
+            }
+        }
+
+        private void txtBarcodeData_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Product p;
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                if (saleDetail != null)
+                {
+                    saleDetail = new SaleDetail();
+                }
+                if (txtBarcodeData.Text != "")
+                {
+                    p = context.Products.FirstOrDefault(x => x.BarcodeData == txtBarcodeData.Text);
+                    if (p != null)
+                    {
+                        txtBarcodeData.Text = p.Name;
+                        txtBarcodeData.ReadOnly = true;
+                        saleDetail.Product = p;
+                        saleDetail.ProductBatch = p.Batches.FirstOrDefault();
+                        txtQty.Focus();
+                    }
+                }
+            }
+            else if (e.KeyChar == (char)Keys.Escape)
+            {
+                p = null;
+                txtBarcodeData.ReadOnly = false;
+                txtBarcodeData.Text = "";
+            }
+        }
+
+        private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                try
+                {
+                    if (txtQty.Text != "" && txtQty.Text != @"0" && decimal.Parse(txtQty.Text) <= saleDetail.ProductBatch.Stock)
+                    {
+                        saleDetail.Qty = decimal.Parse(txtQty.Text);
+                        saleDetail.Total = saleDetail.ProductBatch.Cash * saleDetail.Qty;
+
+                        DGV.Rows.Add(saleDetail.Product.Id, saleDetail.Product.Name, saleDetail.Product.BarcodeData, saleDetail.ProductBatch.Stock, CostCodeController.CostToCode(saleDetail.ProductBatch.Cost),
+                            saleDetail.ProductBatch.Cash, saleDetail.Qty, saleDetail.Total);
+
+                        SaleDetails.Add(saleDetail);
+
+                    }
+                    txtBarcodeData.Text = "";
+                    txtBarcodeData.ReadOnly = false;
+                    txtBarcodeData.Focus();
+                    txtQty.Clear();
+                }
+                catch (Exception exception)
+                {
+
+                }
+            }
+        }
+
+        private void DGV_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            calculate_stats();
+        }
+
+        private void DGV_UserDeletingRow(object sender, DataGridViewRowCancelEventArgs e)
+        {
+            SaleDetails.RemoveAt(e.Row.Index);
+            calculate_stats();
+        }
+
+        private void DGV_UserDeletedRow(object sender, DataGridViewRowEventArgs e)
+        {
+            calculate_stats();
         }
     }
 }

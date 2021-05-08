@@ -34,8 +34,7 @@ namespace CPOS
 
         private void Timer_Tick(object sender, EventArgs e)
         {
-            lblDate.Text = "Date : " + DateTime.Now.ToLongDateString();
-            lblTime.Text = "Time : " + DateTime.Now.ToLongTimeString();
+            lblDate.Text = "Date : " + DateTime.Now.ToLocalTime().ToString();
         }
     }
 }

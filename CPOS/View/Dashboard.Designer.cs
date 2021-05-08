@@ -190,7 +190,7 @@ namespace CPOS.View
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(269, 57);
             this.button7.TabIndex = 22;
-            this.button7.Text = "Backup";
+            this.button7.Text = "Reports";
             this.button7.UseVisualStyleBackColor = false;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -198,10 +198,10 @@ namespace CPOS.View
             // 
             this.loggedUser1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.loggedUser1.BackColor = System.Drawing.Color.Transparent;
-            this.loggedUser1.Location = new System.Drawing.Point(828, 97);
+            this.loggedUser1.Location = new System.Drawing.Point(857, 88);
             this.loggedUser1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.loggedUser1.Name = "loggedUser1";
-            this.loggedUser1.Size = new System.Drawing.Size(406, 149);
+            this.loggedUser1.Size = new System.Drawing.Size(315, 91);
             this.loggedUser1.TabIndex = 23;
             // 
             // Dashboard

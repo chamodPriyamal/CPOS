@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CPOS.Helper;
+using CPOS.Reports;
 
 namespace CPOS.View
 {
@@ -45,7 +46,7 @@ namespace CPOS.View
 
         private void button7_Click(object sender, EventArgs e)
         {
-            GC.Collect();
+            new ReportDashboard().Show();
         }
     }
 }
