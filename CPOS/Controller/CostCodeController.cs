@@ -30,19 +30,26 @@ namespace CPOS.Controller
 
         public static decimal CodeToCost(string Code)
         {
-            string xcode = Code.ToUpper();
-            xcode = xcode.Replace(CostCode[0], '0');
-            xcode = xcode.Replace(CostCode[1], '1');
-            xcode = xcode.Replace(CostCode[2], '2');
-            xcode = xcode.Replace(CostCode[3], '3');
-            xcode = xcode.Replace(CostCode[4], '4');
-            xcode = xcode.Replace(CostCode[5], '5');
-            xcode = xcode.Replace(CostCode[6], '6');
-            xcode = xcode.Replace(CostCode[7], '7');
-            xcode = xcode.Replace(CostCode[8], '8');
-            xcode = xcode.Replace(CostCode[9], '9');
-            xcode = xcode.Replace(CostCode[10],'.');
-            return decimal.Parse(xcode);
+            try
+            {
+                string xcode = Code.ToUpper();
+                xcode = xcode.Replace(CostCode[0], '0');
+                xcode = xcode.Replace(CostCode[1], '1');
+                xcode = xcode.Replace(CostCode[2], '2');
+                xcode = xcode.Replace(CostCode[3], '3');
+                xcode = xcode.Replace(CostCode[4], '4');
+                xcode = xcode.Replace(CostCode[5], '5');
+                xcode = xcode.Replace(CostCode[6], '6');
+                xcode = xcode.Replace(CostCode[7], '7');
+                xcode = xcode.Replace(CostCode[8], '8');
+                xcode = xcode.Replace(CostCode[9], '9');
+                xcode = xcode.Replace(CostCode[10],'.');
+                return decimal.Parse(xcode);
+            }
+            catch (Exception e)
+            {
+                return 0;
+            }
         }
     }
 }

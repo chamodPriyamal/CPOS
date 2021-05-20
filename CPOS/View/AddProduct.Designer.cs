@@ -220,6 +220,7 @@ namespace CPOS.View
             this.txtCost.Name = "txtCost";
             this.txtCost.Size = new System.Drawing.Size(322, 33);
             this.txtCost.TabIndex = 2;
+            this.txtCost.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCost_KeyPress);
             this.txtCost.Leave += new System.EventHandler(this.txtCost_Leave);
             // 
             // txtCash
@@ -230,6 +231,7 @@ namespace CPOS.View
             this.txtCash.Size = new System.Drawing.Size(322, 33);
             this.txtCash.TabIndex = 3;
             this.txtCash.TextChanged += new System.EventHandler(this.txtCash_TextChanged);
+            this.txtCash.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCash_KeyPress);
             // 
             // txtCredit
             // 

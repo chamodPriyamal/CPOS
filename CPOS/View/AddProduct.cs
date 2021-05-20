@@ -77,12 +77,12 @@ namespace CPOS.View
                                 DialogResult.Yes)
                             {
                                 BarcodeController.print_barcode(product.Id, int.Parse((batch.Stock * 2) .ToString()));
-                                BarcodeController.print_barcode_preview(product.Id);
+                               // BarcodeController.print_barcode_preview(product.Id);
                             }
                             else
                             {
                                 BarcodeController.print_barcode(product.Id, int.Parse(batch.Stock.ToString()));
-                                BarcodeController.print_barcode_preview(product.Id);
+                                //BarcodeController.print_barcode_preview(product.Id);
                             }
                         }
 
@@ -134,6 +134,19 @@ namespace CPOS.View
         {
             txtCredit.Text = txtCash.Text;
             txtMarkup.Text = txtCash.Text;
+        }
+
+        private void txtCost_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtCash_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                txtCost.Text = CostCodeController.CostToCode(decimal.Parse(txtCash.Text + "0") / 16);
+            }
         }
     }
 }
