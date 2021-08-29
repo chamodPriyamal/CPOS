@@ -23,6 +23,7 @@ namespace CPOS.View
             InitializeComponent();
             categoryController = new CategoryController();
             context = DatabaseController.GetConnection();
+            panel2.BackColor = Color.FromArgb(57, 62, 70);
         }
 
         private void btnNew_Click(object sender, EventArgs e)
@@ -86,7 +87,7 @@ namespace CPOS.View
                             }
                         }
 
-                        Helper.ClearForm.ClearAllTextFields(this);
+                        ClearForm.ClearAllTextFields(this);
                         txtDescription.Text = "-";
                         txtReOrder.Text = "0";
                         txtName.Focus();
@@ -136,17 +137,17 @@ namespace CPOS.View
             txtMarkup.Text = txtCash.Text;
         }
 
-        private void txtCost_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            
-        }
-
         private void txtCash_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
             {
                 txtCost.Text = CostCodeController.CostToCode(decimal.Parse(txtCash.Text + "0") / 16);
             }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ClearForm.ClearAllTextFieldsOnPanel2(this);
         }
     }
 }

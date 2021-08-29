@@ -7,6 +7,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -69,6 +71,33 @@ namespace CPOS.Helper
                     ctrl.Text = "";
                 }
             }
+        }
+
+        public static void ClearAllTextFieldsOnPanel2(Form f)
+        {
+            var panel1 = FindControlByName(f, "panel1");
+            var panel2 = FindControlByName(panel1, "panel2");
+            foreach (Control ctrl in panel2.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    ctrl.Text = "";
+                }
+            }
+        }
+
+        private static Control FindControlByName(Control f, string name)
+        {
+            Control c = null;
+            foreach (Control ctrl in f.Controls)
+            {
+                if (ctrl.Name == name)
+                {
+                    c = ctrl;
+                }
+
+            }
+            return c;
         }
     }
 }

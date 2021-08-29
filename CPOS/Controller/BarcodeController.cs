@@ -11,7 +11,6 @@ namespace CPOS.Controller
 {
     public static class BarcodeController
     {
-        private static Barcode barcode;
 
         public static byte[] GetBarcodeBytes(string data)
         {

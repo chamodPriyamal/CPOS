@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -22,7 +23,6 @@ namespace CPOS.View
         private Employee Rep;
         private CPOSContext context = DatabaseController.GetConnection();
 
-
         public Pos()
         {
             InitializeComponent();
@@ -35,7 +35,8 @@ namespace CPOS.View
 
         private void reset()
         {
-            customer = new Customer();
+            txtCustId.Enabled = true;
+            txtCustId.Clear();
             saleDetail = new SaleDetail();
             SaleDetails = new List<SaleDetail>();
             Rep = new Employee();
@@ -47,6 +48,7 @@ namespace CPOS.View
             txtPaid.Text = "0";
             DGV.Rows.Clear();
             txtTotal.Text = "0";
+            txtGrandTotal.Clear();
             txtCustId.Focus();
         }
 
@@ -145,7 +147,7 @@ namespace CPOS.View
                 Reports.PosInvoice receipt = new Reports.PosInvoice();
                 receipt.SetDatabaseLogon("cvpos", "CVPOS@1010809");
                 receipt.RecordSelectionFormula = "{Sales.Id} = " + sale.Id;
-                receipt.PrintToPrinter(1, false, 1, 1);
+                receipt.PrintToPrinter(1, false, 1, 10);
                 ReportViewer viewer = new ReportViewer(receipt);
                 viewer.TopMost = true;
                 viewer.ShowDialog();
